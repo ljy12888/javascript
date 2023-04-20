@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        table td{
+    border: 1px solid rgba(255, 0, 0,0.7);
+}
+.a{
+    border-collapse: collapse;
+}
+    </style>
+</head>
+<body>
+    <script>
+        const dollar = prompt("환전하고자 하는 달러를 입력해주세요.",'1')
+        const ex = 1350
+        const won = Number(dollar)*ex
+        const jpy = Number((dollar)*1332)
+        const cny = Number((dollar)*68735)
+        console.log(`환전하신 ${dollar}달러는 ${won}원 입니다.`)
+
+        let = ""
+        let += '<table>'
+        let += `<tr><td>입력하신 ${dollar}달러를 환전하면</td></tr>`
+        let += `<tr><td>한국 :${won}</td></tr>` 
+        let += `<tr><td>일본 :${jpy}</td></tr>` 
+        let += `<tr><td>중국 :${cny}</td></tr>` 
+        document.write(let)  
+    </script>
+</body>
+</html>

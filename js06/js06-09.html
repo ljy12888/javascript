@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>가위바위보-1</title>
+</head>
+<body>
+    <script>
+       const arr = ['가위','바위','보']
+       
+        for(let i=1;i<=10;i++){
+            let input = prompt(`${arr} 를 입력`)
+            let index = Number(arr.indexOf(input))
+            //console.log(index)
+            let ran = Math.floor(Math.random()*3)
+            //console.log(ran)
+           if(input !== null){ 
+             if(index===0){
+                if(ran===0){alert('무승부')}
+                if(ran===1){alert('You Lost')}
+                if(ran===2){alert('You Win')}}
+        
+            if(index===1){
+                if(ran===0){alert('You Win')}
+                if(ran===1){alert('무승부')}
+                if(ran===2){alert('You Lost')}}
+
+            if(index===2){
+                if(ran===0){alert('You Lost')}
+                if(ran===1){alert('You Win')}
+                if(ran===2){alert('무승부')}}
+           }
+           if(input === null)break
+           
+           if(alert=='You Win'){console.log(1)}
+           if(alert=='You Lost'){console.log(2)}
+           if(alert=='무승부'){console.log(3)}
+        }
+        
+
+    </script>
+    
+</body>
+</html>

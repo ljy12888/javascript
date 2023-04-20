@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        const input = prompt('숫자를 입력해.')
+        document.write(`거스름돈은,${input}원입니다.<br>`)
+        let a=Number(input.length)
+        
+
+        if(a===5){
+            if(input[0]>=5){document.write(`5만원=1<br>`)
+                document.write(`1만원=${input[0]-5}<br>`)}
+
+            if(input[0]<5){document.write(`5만원=0<br>`)
+                document.write(`1만원=${input[0]}<br>`)}
+
+            if(input[1]>=5){document.write(`5천원=1<br>`)
+                document.write(`1천원=${input[1]-5}<br>`)}
+
+            if(input[1]<5){document.write(`5천원=0<br>`)
+                document.write(`1천원=${input[1]}<br>`)}
+
+            if(input[2]>=5){document.write(`5백원=1<br>`)
+                document.write(`1백원=${input[2]-5}<br>`)}
+
+            if(input[2]<5){document.write(`5백원=0<br>`)
+                document.write(`1백원=${input[2]}<br>`)}
+
+            if(input[3]>=5){document.write(`5십원=1<br>`)
+                document.write(`1십원=${input[3]-5}<br>`)}
+
+            if(input[3]<5){document.write(`5십원=0<br>`)
+                document.write(`1십원=${input[3]}<br>`)}
+            }
+            
+        
+        if(a===4){
+            document.write('5만원=0<br>1만원=0<br>')
+            if(input[0]>=5){document.write(`5천원=1<br>`)
+                document.write(`1천원=${input[0]-5}<br>`)}
+
+            if(input[0]<5){document.write(`5천원=0<br>`)
+                document.write(`1천원=${input[0]}<br>`)}
+
+            if(input[1]>=5){document.write(`5백원=1<br>`)
+                document.write(`1백원=${input[1]-5}<br>`)}
+
+            if(input[1]<5){document.write(`5백원=0<br>`)
+                document.write(`1백원=${input[1]}<br>`)}
+
+            if(input[2]>=5){document.write(`5십원=1<br>`)
+                document.write(`1십원=${input[2]-5}<br>`)}
+
+            if(input[2]<5){document.write(`5십원=0<br>`)
+                document.write(`1십원=${input[2]}<br>`)}
+        }
+
+        if(a===3){
+            document.write('5만원=0<br>1만원=0<br>');
+            document.write('5천원=0<br>1천원=0<br>');
+
+            
+            if(input[0]>=5){document.write(`5백원=1<br>`)
+                document.write(`1백원=${input[0]-5}<br>`)}
+
+            if(input[0]<5){document.write(`5백원=0<br>`)
+                document.write(`1백원=${input[0]}<br>`)}
+
+            if(input[1]>=5){document.write(`5십원=1<br>`)
+                document.write(`1십원=${input[1]-5}<br>`)}
+
+            if(input[1]<5){document.write(`5십원=0<br>`)
+                document.write(`1십원=${input[1]}<br>`)}
+        }
+
+
+        if(a===2){
+            document.write('5만원=0<br>1만원=0<br>');
+            document.write('5천원=0<br>1천원=0<br>');
+            document.write('5백원=0<br>1백원=0<br>');
+
+            if(input[0]>=5){document.write(`5십원=1<br>`)
+                document.write(`5십원=${input[0]-5}<br>`)}
+
+            if(input[0]<5){document.write(`5십원=0<br>`)
+                document.write(`1십원=${input[0]}<br>`)}
+            }
+    </script>
+</body>
+</html>

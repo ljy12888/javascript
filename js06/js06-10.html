@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>가위바위보-2</title>
+</head>
+<body>
+    <script>
+       const arr = ['가위','바위','보']
+       let win = 0
+       let lost = 0
+       let row = 0
+       
+        for(let i=1;i<=10;i++){
+            let input = prompt(`${arr} 를 입력하세요`)
+            let index = Number(arr.indexOf(input))
+            //console.log(index)
+            let ran = Math.floor(Math.random()*3)
+            //console.log(ran)
+           if(input !== null){ 
+             if(index===0){
+                if(ran===0){alert('무승부')
+                row = row + 1
+            }
+                if(ran===1){alert('You Lost')
+                lost = lost + 1
+
+            }
+                if(ran===2){alert('You Win')
+                win = win +1
+            }
+            
+        }
+        
+            if(index===1){
+                if(ran===0){alert('You Win')
+                win = win +1
+            }
+                if(ran===1){alert('무승부')
+                row = row + 1
+            }
+                if(ran===2){alert('You Lost')
+                lost = lost + 1
+            }
+            
+        }
+
+            if(index===2){
+                if(ran===0){alert('You Lost')
+                lost = lost + 1
+            }
+                if(ran===1){alert('You Win')
+                win = win +1
+            }
+                if(ran===2){alert('무승부')
+                row = row + 1
+            }
+            
+        }
+           }
+           if(input === null)break
+           let per=Math.floor((win/(win+lost))*100)+'%'
+           alert(`${win}:${lost} 승률=${per}`)
+           
+    }
+
+    </script>
+    
+</body>
+</html>

@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        
+        table td{
+    border: 1px solid rgba(255, 0, 0,0.7);
+}
+.a{
+    border-collapse: collapse;
+}
+    
+    </style>
+</head>
+<body>
+    <script>
+        const rad = prompt('반지름 값을 입력하세요(cm)')
+        const num = Number(rad)
+
+        let = ""
+        let += '<table class=a>'
+        let += `<tr><td>입력하신 원의 반지름은 : ${rad}cm입니다.</td></tr>`
+        let += `<tr><td>원의 둘레 = ${num*2*3.14}cm</td></tr>` 
+        let += `<tr><td>원의 넓이 = ${num*num*3.14}cm</td></tr>`
+        let += '</table>' 
+        
+        document.write(let)  
+    </script>
+</body>
+</html>

@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>주사위</title>
+</head>
+<body>
+    <script>
+        let dice=[0,0,0,0,0,0,0]
+
+
+        for(let i=0;i<100000;i++){
+        const array = new Uint8Array(2)
+        crypto.getRandomValues(array)
+        const ran = array[0]%6 + 1
+        dice[ran-1]++
+        }
+        for(let j=0;j<dice.length-1;j++){dice[6]+=dice[j]}
+        console.log(dice)
+    </script>
+</body>
+</html>

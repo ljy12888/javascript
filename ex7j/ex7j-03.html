@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>주사위그래프1</title>
+</head>
+<body>
+    <div>
+        <canvas id="myChart"></canvas>
+      </div>
+      
+      <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+      
+      <script>
+         let dice=[0,0,0,0,0,0,0]
+
+
+        for(let i=0;i<100000;i++){
+const array = new Uint8Array(2)
+crypto.getRandomValues(array)
+const ran = array[0]%6 + 1
+dice[ran-1]++
+}
+        for(let j=0;j<dice.length-1;j++){dice[6]+=dice[j]}
+            console.log(dice)
+            const dchart = dice.splice(0,dice.length-1)
+
+        const ctx = document.getElementById('myChart');
+        
+      
+        new Chart(ctx, {
+          type: 'bar',
+          data: {
+            labels: ['주사위값:1', '주사위값:2', '주사위값:3', '주사위값:4', '주사위값:5', '주사위값:6'],
+            datasets: [{
+              label: '# of Votes',
+              data: dchart,
+              borderWidth: 1
+            }]
+          },
+          options: {
+            scales: {
+              y: {
+                beginAtZero: true
+              }
+            }
+          }
+        });
+      </script>
+       
+</body>
+</html>

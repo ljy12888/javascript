@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>구구단</title>
+    <style>
+        table td{
+            border: 1px solid black;
+        }
+        table{
+            border-collapse: collapse;
+        }
+        table tr:nth-child(2n){
+            background-color: yellow;
+        }
+
+    </style>
+</head>
+<body>
+    <script>
+        const input = prompt('값을 입력하세요.')
+
+        let=""
+        let += `<h1>${input}단</h1>`
+        let += '<table>'
+        let += `<tr><td>${input} X 1 = ${input*1}</td></tr>`
+        let += `<tr><td>${input} X 2 = ${input*2}</td></tr>`
+        let += `<tr><td>${input} X 3 = ${input*3}</td></tr>`
+        let += `<tr><td>${input} X 4 = ${input*4}</td></tr>`
+        let += `<tr><td>${input} X 5 = ${input*5}</td></tr>`
+        let += `<tr><td>${input} X 6 = ${input*6}</td></tr>`
+        let += `<tr><td>${input} X 7 = ${input*7}</td></tr>`
+        let += `<tr><td>${input} X 8 = ${input*8}</td></tr>`
+        let += `<tr><td>${input} X 9 = ${input*9}</td></tr>`
+        let += '</table>'
+
+        document.write(let)
+    </script>
+</body>
+</html>

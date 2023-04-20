@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        table td,th{
+        border: 1px solid red;
+        }
+        .a{
+        border-collapse: collapse;
+        }
+        .b{
+            background-color: aqua;
+        }
+        </style>
+        
+        <script>
+            let num = prompt('"true"또는"false"를 입력하세요');
+            let list = '';
+            list += '<table class="a">';
+            list += `<tr class="b"><td>&&연산</td><td>연산</td><td>값</td><td>결과</td></tr>`;
+            list += `<tr><td>${num}</td><td>&&</td><td>false</td><td>${false&&num}</td></tr>`;
+            list += `<tr><td>${num}</td><td>&&</td><td>true</td><td>${true&&num}</td></tr>`;
+            list += `<tr class="b"><td>||연산</td><td>연산</td><td>값</td><td>결과</td></tr>`;
+            list += `<tr><td>${num}</td><td>||</td><td>false</td><td>${false||num}</td></tr>`;
+            list += `<tr><td>${num}</td><td>||</td><td>true</td><td>${true||num}</td></tr>`;
+            list += '</table>'; 
+            const r
+            r=10;
+            document.write()  
+    document.write(list)
+        </script>
+</head>
+<body>
+    
+</body>
+</html>

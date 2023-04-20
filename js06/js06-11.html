@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>주사위게임1</title>
+</head>
+<body>
+    <script>
+        let a0=0
+        let a1=0
+        let a2=0
+        let a3=0
+        let a4=0
+        let a5=0
+        
+        let ran
+        for(let i=1;i<=100000;i++){
+        let ran=Math.floor(Math.random()*7)
+        if(ran%6 == 0){a0 = a0+1; }
+        if(ran%6 == 1){a1 = a1+1; }
+        if(ran%6 == 2){a2 = a2+1; }
+        if(ran%6 == 3){a3 = a3+1; }
+        if(ran%6 == 4){a4 = a4+1; }
+        if(ran%6 == 5){a5 = a5+1; }
+
+        }
+        let na0=Number(a0)
+        let na1=Number(a1)
+        let na2=Number(a2)
+        let na3=Number(a3)
+        let na4=Number(a4)
+        let na5=Number(a5)
+        let total=na0+na1+na2+na3+na4+na5
+        document.write(`1 : ${a5}<br>`)
+        document.write(`2 : ${a4}<br>`)
+        document.write(`3 : ${a3}<br>`)
+        document.write(`4 : ${a2}<br>`)
+        document.write(`5 : ${a1}<br>`)
+        document.write(`6 : ${a0}<br>`)
+        document.write(`total :${total}`)
+       
+       
+
+    </script>
+</body>
+</html>

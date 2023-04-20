@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>주사위게임2</title>
+</head>
+<body>
+    <script>
+        let a0=a1=a2=a3=a4=a5=a6=a7=a8=a9=0
+        let ran
+
+
+        for(let i=1;i<=1000000;i++){
+        let ran=Math.floor(Math.random()*10)
+        if(ran%9 == 0){a0 = a0+1; }
+        if(ran%9 == 1){a1 = a1+1; }
+        if(ran%9 == 2){a2 = a2+1; }
+        if(ran%9 == 3){a3 = a3+1; }
+        if(ran%9 == 4){a4 = a4+1; }
+        if(ran%9 == 5){a5 = a5+1; }
+        if(ran%9 == 6){a6 = a6+1; }
+        if(ran%9 == 7){a7 = a7+1; }
+        if(ran%9 == 8){a8 = a8+1; }
+        if(ran%9 == 9){a9 = a9+1; }
+
+        }
+        let na0=Number(a0)
+        let na1=Number(a1)
+        let na2=Number(a2)
+        let na3=a3+a6+a7+a8+a9
+        let nna3=Number(a3+a6+a7+a8+a9)
+        let na4=Number(a4)
+        let na5=Number(a5)
+        let total=na0+na1+na2+nna3+na4+na5
+
+        let pa0=Math.floor((na0/(total))*100)
+        let pa1=Math.floor((na1/(total))*100)
+        let pa2=Math.floor((na2/(total))*100)
+        let pa3=Math.floor((na3/(total))*100)
+        let pa4=Math.floor((na4/(total))*100)
+        let pa5=Math.floor((na5/(total))*100)
+
+        document.write(`1 : ${na5}(확률:${pa5}%)<br>`)
+        document.write(`2 : ${na4}(확률:${pa4}%)<br>`)
+        document.write(`3 : ${nna3}(확률:${pa3}%)<br>`)
+        document.write(`4 : ${na2}(확률:${pa2}%)<br>`)
+        document.write(`5 : ${na1}(확률:${pa1}%)<br>`)
+        document.write(`6 : ${na0}(확률:${pa0}%)<br>`)
+        document.write(`total :${total}`)
+       
+       
+
+    </script>
+</body>
+</html>

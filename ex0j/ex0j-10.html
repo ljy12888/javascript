@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+    table td,th{
+    border: 1px solid red;
+    }
+    .a{
+    border-collapse: collapse;
+    }
+    </style>
+    
+    <script>
+        let num = prompt('값을 입력하세요');
+        let list = '';
+        list += '<table class="a">';
+        list += `10<tr><td>증감연산자</td><td>설명</td><td>예)let number=12</td><td>순서</td></tr>`;
+        list += `<tr><td>변수++</td><td>기존의 변수 값에 1을 더함(후위)</td><td>${num++}</td><td>1</td></tr>`;
+        list += `<tr><td>++변수</td><td>기존의 변수 값에 1을 더함(전위)</td><td>${++num}</td><td>2</td></tr>`;
+        list += `<tr><td>변수--</td><td>기존의 변수 값에 1을 뺌(후위)</td><td>${num--}</td><td>3</td></tr>`;
+        list += `<tr><td>--변수</td><td>기존의 변수 값에 1을 뺌(전위)</td><td>${--num}</td><td>4</td></tr>`;
+        list += '</table>';   
+document.write(list)
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

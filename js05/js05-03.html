@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        
+        const arr=['강아지','고양이','코끼리','원숭이','호랑이','거북이','토끼']
+        const input=prompt(`${arr}중 한마리를 고르시오.`)
+
+        for(let i=0;i<=arr.length;i++){
+            console.log(i,arr[i])
+            document.write(`<h1 style="color:blue">${arr[i]}</h1>`)
+            if(i==arr.indexOf(input))break
+            
+            
+
+        }
+        
+        
+     
+    </script>
+</body>
+</html>

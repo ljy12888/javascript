@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        const array = new Uint8Array(10);
+        self.crypto.getRandomValues(array);
+
+        console.log("오늘자 행운의 수:");
+        for (const num of array) {
+                console.log(num);
+        }
+        const ran1 = Math.floor((array[0]/255)*100)
+        const ran2 = array[1]%100+1
+
+    </script>
+</body>
+</html>

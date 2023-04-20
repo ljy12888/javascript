@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>n부터m까지의 짝수합 구하기</title>
+</head>
+<body>
+    <script>
+        const start=prompt('처음 숫자를 입력하세요')*1
+        const end=prompt('두번째 숫자를 입력하세요')*1
+        let sum = 0
+
+        if(start%2===0){
+            for(let i=start;i<=end;i=i+2){
+            sum = sum + i
+            console.log(i,sum)
+            }
+
+        }
+        else{
+            for(let i=start+1;i<=end;i=i+2){
+            sum = sum + i
+            console.log(i,sum)
+            }
+        }
+
+        
+            
+        
+    
+        
+        
+
+        
+    </script>
+</body>
+</html>

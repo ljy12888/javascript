@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://cdn.jsdelivr.net/npm/dayjs@1.11.7/dayjs.min.js"></script>
+    <script>
+        const now = dayjs()
+        let random = now.get('ms')
+        console.log(random)
+        let r2=random%2
+
+        let input = confirm('확인 또는 취소를 누르세요.확인 이면 "true",취소면"false"')
+        if(r2==1){
+            confirm('축하합니다.당신이 이겼습니다.')
+            document.write(random)
+        }
+        else{
+            confirm('당신이 졌습니다.')
+            document.write(random)
+        }
+
+
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

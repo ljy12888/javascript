@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        const 과일=['딸기','바나나','사과','수박','배','키위','복숭아','포도']
+        const input=prompt(`다음 중 뻬고싶은 과일을 입력하세요.
+        ${과일}`)
+        const input2=prompt(`${과일}외에 추가하고 싶은 품목을 입력하세요.`)
+        const index=과일.indexOf(input)
+        
+        과일.splice(index,1)
+        과일.splice(index,0,input2)
+
+
+        document.write(`<h1>빼고싶은과일은${input}이고,<br>
+            추가하고 싶은 품목은${input2}입니다<br>
+            나머지 품목은${과일}</h1>`)
+
+        
+       
+    </script>
+</body>
+</html>
