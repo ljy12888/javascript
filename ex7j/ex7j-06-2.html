@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>랜덤 배열t</title>
+    <title>랜덤 배열</title>
 </head>
 <body>
     <script>
@@ -12,8 +12,28 @@
         let ran2=Math.floor(Math.random()*45)
         let ran3=Math.floor(Math.random()*45)
         let arr=[ran1,ran2,ran3]
+        let temp
 
-       
+        console.log(arr)
+
+        for(let i=0;i<=100;i++){
+            if(arr[0]<=arr[1]&&arr[1]<=arr[2])break
+            if(arr[0]>=arr[1]){
+                temp = arr[0]
+                arr[0] = arr[1]
+                arr[1] = temp
+            }
+            if(arr[1]>=arr[2]){
+                [arr[0],arr[1],arr[2]]=[arr[0],arr[2],arr[1]]
+            }
+        }
+
+
+        
+
+
+
+
         document.write(arr)
 
     </script>
