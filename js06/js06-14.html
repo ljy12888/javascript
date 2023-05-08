@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>랜덤 4개,중복x,오름차순 정리</title>
+</head>
+<body>
+    <script>
+        let a=Math.floor(Math.random()*45+1)
+        let b=Math.floor(Math.random()*45+1)
+        let c=Math.floor(Math.random()*45+1)
+        let d=Math.floor(Math.random()*45+1)
+        arr=[a,b,c,d]
+        let temp
+        let temp2
+
+        
+        if(a==b||a==c||a==d){
+            for(let i=1;i<=1000;i++){
+                a=Math.floor(Math.random()*45+1)
+                if(a!==b&&a!==c&&a!==d)break
+            }
+        }
+        if(b==c||b==d){
+            for(let i=1;i<=1000;i++){
+                b=Math.floor(Math.random()*45+1)
+                if(b!==c&&b!==d&&b!==a)break
+            }
+        }
+        if(c==d){
+            for(let i=1;i<=1000;i++){
+                c=Math.floor(Math.random()*45+1)
+                if(c!==d&&c!==a&&c!==b)break
+            }
+        }
+
+        for(let i=0;i<=100;i++){
+            if(arr[0]<=arr[1]&&arr[1]<arr[2]&&arr[2]<arr[3])break
+            if(arr[0]>arr[1]){
+                temp = arr[0]
+                arr[0]=arr[1]
+                arr[1]=temp
+            }
+            if(arr[1]>arr[2]){
+                temp2=arr[1]
+                arr[1]=arr[2]
+                arr[2]=temp2
+            }
+            if(arr[2]>arr[3]){
+                [arr[0],arr[1],arr[2],arr[3]]=
+                [arr[0],arr[1],arr[3],arr[2]]
+            }
+        }
+
+        document.write(arr)
+    </script>
+</body>
+</html>

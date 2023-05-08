@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>변수의 유효범위</title>
+    <script>
+        /* 같은 이름 전역변수 지역변수 구분*/
+        // let num = 100;
+        // function globalN(){
+        //     let num = 200
+        //     document.write(`함수 내부에서 변수값은 ${num}입니다.<br>`)
+        // }
+        // globalN()
+        // document.write(`함수 내부에서 변수값은 ${num}입니다.<br>`)
+
+        /* 전역변수 */
+        // let num = 100;
+        // function globalN(){
+        //     num = 200
+        //     document.write(`함수 내부에서 변수값은 ${num}입니다.<br>`)
+        // }
+        // globalN()
+        // document.write(`함수 내부에서 변수값은 ${num}입니다.<br>`)
+
+        /* 전역변수2 */
+        let num = 100;
+        function globalN(){
+            document.write(`함수 내부에서 변수값은 ${num}입니다.<br>`)
+            num = 200
+        }
+        globalN()
+        document.write(`함수 내부에서 변수값은 ${num}입니다.<br>`)
+
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

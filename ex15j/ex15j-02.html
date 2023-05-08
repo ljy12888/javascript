@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>map()연습문제1</title>
+</head>
+<body>
+    <script>
+        //const arr=Array(200).fill(0).map((v,i)=>v=i+1||(v%11===0)?v=v*2)
+
+
+        /*const arr=Array(200).fill(0).map(function(v,i){ 
+                v=i+1
+            if(v%11===0)v=v*2
+
+            return v    
+        })*/
+
+        let arr=[]
+        for(let i=0;i<200;i++){
+            arr[i]=i+1
+        }
+        arr=arr.map(function(v,i){ 
+            
+                v=i+1
+            if(v%11===0)v=v*2
+
+            return v    
+        })
+        console.log(arr)
+    </script>
+</body>
+</html>

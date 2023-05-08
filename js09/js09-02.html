@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>로또 중복제거 카운팅하기-함수이용</title>
+</head>
+<body>
+    <script>
+        
+        
+
+       function lotto(){
+        var arr=[]
+        while(arr.length<6){
+            const ran = Math.floor(Math.random()*45+1)
+            if(!arr.includes(ran))arr.push(ran)
+        }
+        document.write(arr.sort((a,b)=>(a-b)))
+       }
+
+       let sum1=0
+       for(let i=1;i<=2; i++){
+        
+        
+        for(let i=0;i<arr.length;i++){
+            if(arr[i]==1) sum1+=1
+        }
+       }
+        document.write(sum1)
+    
+    </script>
+</body>
+</html>

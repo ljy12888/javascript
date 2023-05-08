@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>로또 중복제거 카운팅하기</title>
+</head>
+<body>
+    <script> 
+       let sum1=sum2=sum3=sum4=sum5=0
+       let sum6=sum7=sum8=sum9=sum10=0
+       let sum11=sum12=sum13=sum14=sum15=0
+       let sum16=sum17=sum18=sum19=sum20=0
+       let sum21=sum22=sum23=sum24=sum25=0
+       let sum26=sum27=sum28=sum29=sum30=0
+       let sum31=sum32=sum33=sum34=sum35=0
+       let sum36=sum37=sum38=sum39=sum40=0
+       let sum41=sum42=sum43=sum44=sum45=0
+      for(let i=0;i<100000;i++){
+        const arr=[]
+        while(arr.length<6){
+            const ran = Math.floor(Math.random()*45+1)
+            if(!arr.includes(ran))arr.push(ran)}
+
+        for(let i=0;i<arr.length;i++){
+            if(arr[i]==1) sum1+=1
+            if(arr[i]==2) sum2+=1
+            if(arr[i]==3) sum3+=1
+            if(arr[i]==4) sum4+=1
+            if(arr[i]==5) sum5+=1 
+            if(arr[i]==6) sum6+=1
+            if(arr[i]==7) sum7+=1
+            if(arr[i]==8) sum8+=1
+            if(arr[i]==9) sum9+=1         
+            if(arr[i]==10) sum10+=1
+            if(arr[i]==11) sum11+=1
+            if(arr[i]==12) sum12+=1
+            if(arr[i]==13) sum13+=1
+            if(arr[i]==14) sum14+=1
+            if(arr[i]==15) sum15+=1 
+            if(arr[i]==16) sum16+=1
+            if(arr[i]==17) sum17+=1
+            if(arr[i]==18) sum18+=1
+            if(arr[i]==19) sum19+=1         
+            if(arr[i]==20) sum20+=1
+            if(arr[i]==21) sum21+=1
+            if(arr[i]==22) sum22+=1
+            if(arr[i]==23) sum23+=1
+            if(arr[i]==24) sum24+=1
+            if(arr[i]==25) sum25+=1 
+            if(arr[i]==26) sum26+=1
+            if(arr[i]==27) sum27+=1
+            if(arr[i]==28) sum28+=1
+            if(arr[i]==29) sum29+=1         
+            if(arr[i]==30) sum30+=1
+            if(arr[i]==31) sum31+=1
+            if(arr[i]==32) sum32+=1
+            if(arr[i]==33) sum33+=1
+            if(arr[i]==34) sum34+=1
+            if(arr[i]==35) sum35+=1 
+            if(arr[i]==36) sum36+=1
+            if(arr[i]==37) sum37+=1
+            if(arr[i]==38) sum38+=1
+            if(arr[i]==39) sum39+=1         
+            if(arr[i]==40) sum40+=1
+            if(arr[i]==41) sum41+=1
+            if(arr[i]==42) sum42+=1
+            if(arr[i]==43) sum43+=1
+            if(arr[i]==44) sum44+=1
+            if(arr[i]==45) sum45+=1 
+        }
+        
+    }
+
+      document.write(`1의 합 : ${sum1}<br>`)
+      document.write(`2의 합 : ${sum2}<br>`)
+      document.write(`3의 합 : ${sum3}<br>`)
+      document.write(`4의 합 : ${sum4}<br>`)
+      document.write(`5의 합 : ${sum5}<br>`)
+      document.write(`6의 합 : ${sum6}<br>`)
+      document.write(`7의 합 : ${sum7}<br>`)
+      document.write(`8의 합 : ${sum8}<br>`)
+      document.write(`9의 합 : ${sum9}<br>`)
+      document.write(`10의 합 : ${sum10}<br>`)
+      document.write(`11의 합 : ${sum11}<br>`)
+      document.write(`12의 합 : ${sum12}<br>`)
+      document.write(`13의 합 : ${sum13}<br>`)
+      document.write(`14의 합 : ${sum14}<br>`)
+      document.write(`15의 합 : ${sum15}<br>`)
+      document.write(`16의 합 : ${sum16}<br>`)
+      document.write(`17의 합 : ${sum17}<br>`)
+      document.write(`18의 합 : ${sum18}<br>`)
+      document.write(`19의 합 : ${sum19}<br>`)
+      document.write(`20의 합 : ${sum20}<br>`)
+      document.write(`21의 합 : ${sum21}<br>`)
+      document.write(`22의 합 : ${sum22}<br>`)
+      document.write(`23의 합 : ${sum23}<br>`)
+      document.write(`24의 합 : ${sum24}<br>`)
+      document.write(`25의 합 : ${sum25}<br>`)
+      document.write(`26의 합 : ${sum26}<br>`)
+      document.write(`27의 합 : ${sum27}<br>`)
+      document.write(`28의 합 : ${sum28}<br>`)
+      document.write(`29의 합 : ${sum29}<br>`)
+      document.write(`30의 합 : ${sum30}<br>`)
+      document.write(`31의 합 : ${sum31}<br>`)
+      document.write(`32의 합 : ${sum32}<br>`)
+      document.write(`33의 합 : ${sum33}<br>`)
+      document.write(`34의 합 : ${sum34}<br>`)
+      document.write(`35의 합 : ${sum35}<br>`)
+      document.write(`36의 합 : ${sum36}<br>`)
+      document.write(`37의 합 : ${sum37}<br>`)
+      document.write(`38의 합 : ${sum38}<br>`)
+      document.write(`39의 합 : ${sum39}<br>`)
+      document.write(`40의 합 : ${sum40}<br>`)
+      document.write(`41의 합 : ${sum41}<br>`)
+      document.write(`42의 합 : ${sum42}<br>`)
+      document.write(`43의 합 : ${sum43}<br>`)
+      document.write(`44의 합 : ${sum44}<br>`)
+      document.write(`45의 합 : ${sum45}<br>`)
+
+      let total=Number(sum1+sum2+sum3+sum4+sum5+sum6+sum7+sum8+sum9+sum10
+      +sum11+sum12+sum13+sum14+sum15+sum16+sum17+sum18+sum19+sum20
+      +sum21+sum22+sum23+sum24+sum25+sum26+sum27+sum28+sum29+sum30
+      +sum31+sum32+sum33+sum34+sum35+sum36+sum37+sum38+sum39+sum40
+      +sum41+sum42+sum43+sum44+sum45)
+     
+        document.write(`total : ${total}`)
+
+    </script>
+</body>
+</html>

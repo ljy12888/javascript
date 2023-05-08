@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>속도테스트</title>
+</head>
+<body>
+    <script>
+        const arr=[]
+
+        for(let i=0;i<1000000;i++)arr.push(i)
+
+        console.time('for - length')
+        const cnt=arr.length
+        for(let i=cnt;i>0;i--){}
+        console.timeEnd('for - 1000000')
+        console.time('for')
+    </script>
+</body>
+</html>

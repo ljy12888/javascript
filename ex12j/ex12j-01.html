@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>함수로 최솟값구하기</title>
+</head>
+<body>
+    <script>
+        let a=prompt('4개의 수중 최솟값을 구합니다.첫번째 숫자를 입력하세요.')
+        let b=prompt('4개의 수중 최솟값을 구합니다.두번째 숫자를 입력하세요.')
+        let c=prompt('4개의 수중 최솟값을 구합니다.세번째 숫자를 입력하세요.')
+        let d=prompt('4개의 수중 최솟값을 구합니다.네번째 숫자를 입력하세요.')
+        let arr=[a,b,c,d]
+
+        function min(){
+            let temp 
+            for(let i=1;i<arr.length;i++){
+                
+                if(arr[0]>arr[1]){
+                    temp=arr[0]
+                    arr[0]=arr[1]
+                }
+                if(arr[0]>arr[2]){
+                    temp=arr[0]
+                    arr[0]=arr[2]
+                }
+                if(arr[0]>arr[3]){
+                    temp=arr[0]
+                    arr[0]=arr[3]
+                }
+            }
+            return arr[0]
+        }
+
+        alert(`구하시는 최솟값은 : ${min()}`)
+    </script>
+</body>
+</html>

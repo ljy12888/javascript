@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>함수매개변수활용</title>
+    <style>
+        table{
+            width: 500px;
+            height: 500px;
+            border-collapse: collapse;
+            text-align: center;
+        }
+        td{
+            border: 1px solid #000;
+        }
+        table tr:nth-child(2){
+            background-color: yellow;
+        }
+    </style>
+
+    <script>
+        function a1(i){
+        let list = ''
+        list +=`<table>`
+            list += `<button onclick="a1(0.1)">10%</button><button onclick="a1(0.2)">20%</button><button onclick="a1(0.3)">30%</button><button onclick="a1(0.4)">40%</button>`
+            list +=`<tr><td colspan="4">판매 품목</td></tr>`
+            list +=`<tr><td>NO.</td><td>품목</td><td>정가</td><td>할인율</td></tr>`
+            list +=`<tr style:><td>1</td><td>컴퓨터</td><td class="price">￦800,000</td><td>${800000-(800000*i)}</td></tr>`
+            list +=`<tr><td>2</td><td>노트북</td><td class="price">￦2,200,000</td><td>${2200000-(2200000*i)}</td></tr>`
+            list +=`<tr><td>3</td><td>태블릿</td><td class="price">￦800,000</td><td>${800000-(800000*i)}</td></tr>`
+            list +=`<tr><td>4</td><td>스마트폰</td><td class="price">￦2,000,000</td><td>${2000000-(2000000*i)}</td></tr>`
+            list +=`<tr><td>5</td><td>공유기</td><td class="price">￦120,000</td><td>${120000-(120000*i)}</td></tr>`
+            list +=`<tr><td>6</td><td>키보드</td><td class="price">￦80,000</td><td>${80000-(80000*i)}</td></tr>`
+            list +=`<tr><td>7</td><td>마우스</td><td class="price">￦50,000</td><td>${50000-(50000*i)}</td></tr>`
+            list +=`<tr><td colspan="2">합계</td><td class="price">￦6,050,000</td><td>${6050000-(6050000*i)}</td></tr>`
+            list += `</table>`
+
+           
+
+            document.close();
+            document.write(list);
+            
+
+        }
+           
+                
+
+            
+    </script>
+</head>
+<body>
+    <button onclick="a1(0.1)">10%</button>
+    <button onclick="a1(0.2)">20%</button>
+    <button onclick="a1(0.3)">30%</button>
+    <button onclick="a1(0.4)">40%</button>
+</body>
+</html>

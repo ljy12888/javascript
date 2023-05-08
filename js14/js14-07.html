@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>forEach연습문제</title>
+</head>
+<body>
+    <script>
+        배열=[1,2,3,4,5,6,7,8,9,10]
+
+        let arr1=[]
+        let arr2=[]
+
+        배열.forEach(function(v){
+            if(v%2===0)arr1.push(v)
+            else arr2.push(v)
+            
+        });
+        console.log(arr1)
+        console.log(arr2)
+
+        //forEach를 써서 내림차순으로 정리
+        let temp
+        배열.forEach(function(v,i){
+            for(let j=i+1;j<배열.length;j++){
+                if(배열[i]<배열[j]){
+                    temp=배열[i]
+                    배열[i]=배열[j]
+                    배열[j]=temp
+                }
+            }
+        })
+        console.log(배열)
+    </script>
+</body>
+</html>

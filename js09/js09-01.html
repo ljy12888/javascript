@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>로또 중복제거</title>
+</head>
+<body>
+    <script>
+    
+       function lotto(){
+        const arr=[]
+        while(arr.length<6){
+            const ran = Math.floor(Math.random()*45+1)
+            if(!arr.includes(ran))arr.push(ran)
+        }
+        document.write(arr.sort((a,b)=>(a-b)))
+       }
+       for(let i=1;i<=10; i++){
+        document.write(`${i} : `)
+        lotto()
+        document.write('<br>')
+       }
+    
+    </script>
+</body>
+</html>

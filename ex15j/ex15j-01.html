@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>속도테스트</title>
+    <script>
+        const arr = []
+        for(let i=0;i<10000000;i++)arr.push(i)
+
+        console.time('for - 10000000')
+        for(let i = 0;i<10000000;i++){}
+        console.timeEnd('for - 10000000')
+        console.time('for - length - start')
+        const cnt = arr.length
+        for(let i = cnt;i>0;i--){}
+        console.timeEnd('for - length - start')
+        console.time('let: for - length - End')
+        for(let i = 0;i<arr.length;i++){}
+        console.timeEnd('let: for - length - End')
+        console.time('var: for - length - End')
+        for(var i = 0;i<arr.length;i++){}
+        console.timeEnd('var: for - length - End')
+        console.time('forEach : function')
+        arr.forEach(function(v,i){})
+        console.timeEnd('forEach : function')
+        console.time('forEach : =>')
+        arr.forEach((v,i)=>{})
+        console.timeEnd('forEach : =>')
+        console.time('map() : =>')
+        arr.map((v)=>{})
+        console.timeEnd('map() : =>')
+        console.time('for-of')
+        for (lettem of arr){}
+        console.timeEnd('for-of')
+        console.time('for-in')
+        for (let idex in arr){}
+        console.timeEnd('for-in')
+
+
+
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

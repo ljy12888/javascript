@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>구버전 전개연산자 구현</title>
+</head>
+<body>
+    <script>
+        function sample(...items){
+            console.log(items)
+        }
+
+
+        const arr=[1,2,3,4]
+        //Math.max(...arr)
+        console.log(Math.max.apply(null,arr))
+    </script>
+</body>
+</html>

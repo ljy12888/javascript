@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        let arr=['apple','pear','watermelon','melon','peach','strawberry',
+        'mango','banana','kiwi','grape','orange','mandrin']
+        let arr2=[]
+        let temp
+
+        //5글자이상
+        /*for(let i=0;i<arr.length;i++){
+            if(arr[i].length>=5)arr2.push(arr[i])
+        }
+        //오름차순정리
+        for(let i=0;i<arr2.length-1;i++){
+            for(let j=i+1;j<arr2.length;j++){
+                if(arr2[i][0]>arr2[j][0]){
+                    temp=arr2[i]
+                    arr2[i]=arr2[j]
+                    arr2[j]=temp
+                }
+            }
+        }
+        //글자길이 순서대로
+        for(let i=0;i<arr.length-1;i++){
+            for(let j=i+1;j<arr.length;j++){
+                if(arr[i].length<arr[j].length){
+                    temp=arr[i]
+                    arr[i]=arr[j]
+                    arr[j]=temp
+                }
+            }
+        }*/
+        arr2=arr.filter(v=>v.length>=5)
+    
+
+        console.log(arr2)
+    </script>
+</body>
+</html>

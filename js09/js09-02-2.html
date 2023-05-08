@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>로또 중복제거 카운팅하기</title>
+</head>
+<body>
+    <script> 
+       
+        
+       var arr2=[]
+      for(let i=0;i<100;i++){
+        const arr=[]
+        
+
+        while(arr.length<6){
+            const ran = Math.floor(Math.random()*45+1)
+            if(!arr.includes(ran))arr.push(ran)}
+
+        var arr2 = arr2.concat(arr)
+
+        console.log(arr2)
+        
+    }
+    for(let i=1;i<=45;i++){
+        document.write(`${i}의합계 : ${arr2.indexOf(i)}<br>`)
+    }
+    
+    </script>
+</body>
+</html>

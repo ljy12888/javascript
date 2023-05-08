@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>타이머응용</title>
+</head>
+<body>
+    <script>
+        let ct=0
+        const tid=setInterval(()=>{document.close();document.write(`<h1>${++ct}초 입니다.</h1>`)},1*1000)
+        setTimeout(()=>{
+            clearInterval(tid)
+            document.write('<hr><h1 style="color:red">7초가 되었습니다.</h1>')
+        },7*1000)
+    </script>
+</body>
+</html>

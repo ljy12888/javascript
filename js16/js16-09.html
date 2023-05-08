@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>타이머응용</title>
+</head>
+<body>
+    <script>
+        let n=prompt('"초"를 입력하세요')
+        let ct=0
+        const tid=setInterval(()=>{document.close();document.write(`<h1>${++ct}</h1>`)},500)
+        setTimeout(()=>{
+            clearInterval(tid)
+            document.write(`<hr><h1 style="color:red">시간이 되었습니다.</h1>`)
+        },n*500)
+
+        
+      
+    </script>
+</body>
+</html>

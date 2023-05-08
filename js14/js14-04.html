@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>콜백함수,선언적 함수 사용하기</title>
+</head>
+<body>
+    <script>
+        function call3(name){
+            for(let i=0;i<3;i++){
+                name(i)
+            }
+        }
+
+        function basic(x){
+            console.log(`${x}번째 함수 호출`)
+        }
+    </script>
+</body>
+</html>

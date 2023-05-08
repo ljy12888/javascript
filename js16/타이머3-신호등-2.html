@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<title>DOM CSS</title>
+	<style>
+		#container {
+			width:600px;
+			margin:50px auto;
+			text-align: center;
+		}
+		#red {
+			width:100px;
+			height:100px;			
+			border:1px solid #222;
+            background-color: black;
+            border-radius: 50%;
+			margin:30px auto;
+			transition: 1s;
+		}
+        #yellow {
+			width:100px;
+			height:100px;			
+			border:1px solid #222;
+            background-color: black;
+            border-radius: 50%;
+			margin:30px auto;
+			transition: 1s;
+		}
+        #blue {
+			width:100px;
+			height:100px;			
+			border:1px solid #222;
+            background-color: black;
+            border-radius: 50%;
+			margin:30px auto;
+			transition: 1s;
+		}
+	</style>
+</head>
+<body>
+	<div id="container">
+		<div id="red"></div>
+        <div id="yellow"></div>
+        <div id="blue"></div>
+	</div>	
+	
+	<script>
+        let myRect = document.querySelector("#red");
+        let myRect2 = document.querySelector("#yellow");
+        let myRect3 = document.querySelector("#blue");
+      
+
+        red()
+		
+            //빨간색원
+        function red(){
+            const tid1=setInterval(()=>{
+                myRect.style.backgroundColor = "red";},500)
+			const tid2=setInterval(()=>{
+                myRect.style.backgroundColor = "";},1000)
+			/*const tid3=setInterval(()=>{
+                myRect.style.backgroundColor = "red";},5*1000)*/
+			setTimeout(()=>{
+                clearInterval(tid1,tid2)
+            },6*1000)
+
+            yellow()
+        }
+
+        function yellow(){
+			const tid3=setInterval(()=>{
+                myRect2.style.backgroundColor = "yellow";},7*1000)
+			const tid4=setInterval(()=>{
+                myRect2.style.backgroundColor = "";},10*1000)
+			setTimeout(()=>{
+                clearInterval(tid3,tid4)
+            },11*1000)
+
+            blue()
+        }
+
+        function blue(){
+            const tid5=setInterval(()=>{
+                myRect3.style.backgroundColor = "blue";},11*1000)
+			const tid6=setInterval(()=>{
+                myRect3.style.backgroundColor = "";},15*1000)
+			setTimeout(()=>{
+                clearInterval(tid5,tid6)
+            },16*1000)
+			const tid7=setInterval(()=>{
+                myRect3.style.backgroundColor = "blue";},17*1000)
+			const tid8=setInterval(()=>{
+                myRect3.style.backgroundColor = "";},17.5*1000)
+			setTimeout(()=>{
+                clearInterval(tid7,tid8)
+            },22*1000)
+
+
+            red()
+		}
+
+    </script>
+</body>
+</html>

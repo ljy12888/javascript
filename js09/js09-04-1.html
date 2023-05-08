@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>랜덤숫자 막대그래프2</title>
+</head>
+<body>
+    <div>
+        <canvas id="myChart"></canvas>
+    </div>
+      
+     
+      
+      <script>
+        alert('랜덤숫자 막대그래프')
+          var arr2=[]
+           for(let i=0;i<100;i++){
+             const arr=[]
+             
+     
+             while(arr.length<6){
+                 const ran = Math.floor(Math.random()*45+1)
+                 if(!arr.includes(ran))arr.push(ran)}
+     
+             var arr2 = arr2.concat(arr)
+     
+             console.log(arr2)
+             
+         }
+         for(let i=1;i<=45;i++){
+            const array = new Uint8Array(2)
+            crypto.getRandomValues(array)
+
+             document.write(`${i}의합계 : ${arr2.indexOf(i)}<br>`)
+         }
+
+        </script>
+
+
+        <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+        <script>
+        const ctx = document.getElementById('myChart');
+        
+      
+        new Chart(ctx, {
+          type: 'bar',
+          data: {
+            labels: ['1의합','2의합','3의합','4의합','5의합','6의합','7의합','8의합','9의합','10의합',
+            '11의합','12의합','13의합','14의합','15의합','16의합','17의합','18의합','19의합','20의합',
+            '21의합','22의합','23의합','24의합','25의합','26의합','27의합','28의합','29의합','30의합',
+            '31의합','32의합','33의합','34의합','35의합','36의합','37의합','38의합','39의합','40의합',
+            '41의합','42의합','43의합','44의합','45의합'],
+            datasets: [{
+              label: '# of Votes',
+              data: [arr2.indexOf(1),arr2.indexOf(2),arr2.indexOf(3),arr2.indexOf(4),arr2.indexOf(5),
+              arr2.indexOf(6),arr2.indexOf(7),arr2.indexOf(8),arr2.indexOf(9),arr2.indexOf(10),
+              arr2.indexOf(11),arr2.indexOf(12),arr2.indexOf(13),arr2.indexOf(14),arr2.indexOf(15),
+              arr2.indexOf(16),arr2.indexOf(17),arr2.indexOf(18),arr2.indexOf(19),arr2.indexOf(20),
+              arr2.indexOf(21),arr2.indexOf(22),arr2.indexOf(23),arr2.indexOf(24),arr2.indexOf(25),
+              arr2.indexOf(26),arr2.indexOf(27),arr2.indexOf(28),arr2.indexOf(29),arr2.indexOf(30),
+              arr2.indexOf(31),arr2.indexOf(32),arr2.indexOf(33),arr2.indexOf(34),arr2.indexOf(35),
+              arr2.indexOf(36),arr2.indexOf(37),arr2.indexOf(38),arr2.indexOf(39),arr2.indexOf(40),
+              arr2.indexOf(41),arr2.indexOf(42),arr2.indexOf(43),arr2.indexOf(44),arr2.indexOf(45)],
+              borderWidth: 1
+            }]
+          },
+          options: {
+            
+            scales: {
+              y: {
+                beginAtZero: true
+              }
+            }
+          }
+        });
+      
+           
+           </script>
+       
+       
+</body>
+</html>

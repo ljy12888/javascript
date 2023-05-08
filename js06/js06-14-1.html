@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>랜덤6개,중복x,오름차순</title>
+</head>
+<body>
+    <script>
+        const arr=[]
+        while(arr.length<6){
+            const ran = Math.floor(Math.random()*45+1)
+            if(!arr.includes(ran))arr.push(ran)
+        }
+        document.write(arr.sort((a,b)=>(a-b)))
+    </script>
+</body>
+</html>
