@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        const dog={
+            name:'바두기',
+            age:7,
+            dna:'진돗개',
+            eat:function(food){
+                console.log(`${this.name}은 ${food} 을/를 좋아합니다.`)
+            },
+            play:function(toy){
+                console.log(`${this.name}은 ${toy}을/를 갖고놉니다.`)
+            },
+            wow:function(sound){
+                console.log(`${this.name}은 ${sound}라고 짓습니다.`)
+            },
+        }
+
+        dog.name
+        dog.age
+        dog.dna
+        dog.eat('사료')
+        dog.play('공')
+        dog.wow('왈왈')
+
+    </script>
+</body>
+</html>
