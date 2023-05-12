@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      let arr = [
+        "밥먹자",
+        "뛰놀자",
+        "공부하자",
+        "잠자자",
+        "춤추자",
+        "게임하자",
+        "사귀자",
+      ];
+      let key = ["식사", "플레이", "스터디", "수면", "춤", "오락", "연인"];
+      let obj = {};
+      //console.log(arr[0]);
+      //console.log(key);
+      //console.log(obj);
+
+      /*let arr2 = [arr[0]];
+      console.log(arr, arr2);
+      let obj2 = {
+        식사: "밥먹자",
+        플레이: "뛰놀자",
+      };*/
+
+      /*let temp = obj2.valueOf();
+      console.log(temp);*/
+
+      /*let key2 = (...key);
+      console.log(key);
+      console.log(key2);*/
+
+      let temp;
+      for (let i = 0; i < 8; i++) {
+        temp = key.splice(i, 1);
+        obj.temp = arr[i];
+      }
+
+      console.log(obj);
+    </script>
+  </body>
+</html>

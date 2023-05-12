@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>trim()</title>
+  </head>
+  <body>
+    <script>
+      const stringA = `
+        메세지를 입력하다보니 앞에 줄바꿈도 들어가고`;
+
+      const stringB = `    앞과 뒤에 공백도 들어가고    `;
+
+      console.log(stringA);
+      /*
+        메세지를 입력하다보니 앞에 줄바꿈도 들어가고*/
+      console.log(stringB);
+      //    앞과 뒤에 공백도 들어가고
+      console.log(stringA.trim());
+      //메세지를 입력하다보니 앞에 줄바꿈도 들어가고
+      console.log(stringB.trim());
+      //앞과 뒤에 공백도 들어가고
+    </script>
+  </body>
+</html>

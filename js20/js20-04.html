@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      String.prototype.ck = function (data) {
+        return this.indexOf(data) >= 0
+          ? `${this.indexOf(data) + 1}번째 있어요`
+          : "없네요TT";
+      };
+
+      const str = "안녕하세요";
+      console.log(str.ck("하세"));
+    </script>
+  </body>
+</html>

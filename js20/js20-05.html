@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      const m = Number("숫자로 변환할 수없는 경우");
+
+      console.log(m); //NaN
+      console.log(m === NaN); //false
+      console.log(Number.isNaN(m)); //true
+
+      const n = 10 / 0;
+      console.log(n); //Infinity
+      const o = -10 / 0;
+      console.log(o); //-Infinity
+
+      console.log(Number.isFinite(n)); //false
+      console.log(Number.isFinite(o)); //false
+      console.log(Number.isFinite(1)); //true
+      console.log(Number.isFinite(10)); //true
+    </script>
+  </body>
+</html>
