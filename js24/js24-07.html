@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script>
+      document.addEventListener("DOMContentLoaded", () => {
+        const textarea = document.createElement("textarea");
+        const h1 = document.createElement("h1");
+        document.body.append(h1, textarea);
+        h1.textContent = "글자 수:0";
+        textarea.setAttribute("cols", 30);
+        textarea.setAttribute("rows", 10);
+        textarea.addEventListener("keyup", () => {
+          const length = textarea.value.length;
+          h1.textContent = `글자 수:${length}`;
+        });
+      });
+    </script>
+  </head>
+  <body></body>
+</html>
