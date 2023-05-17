@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script>
+      document.addEventListener("DOMContentLoaded", () => {
+        const div1 = document.createElement("div");
+        const div2 = document.createElement("div");
+        const h1 = document.createElement("h1");
+        const span = document.createElement("span");
+        const a = document.createElement("a");
+
+        document.body.appendChild(div1);
+        document.body.appendChild(div2);
+        div1.appendChild(h1);
+        div2.appendChild(span);
+        h1.textContent = "자바스크립트로 작성하시오!";
+        span.textContent = "아주 감사합니다";
+        div1.setAttribute("class", "d1");
+        div2.setAttribute("class", "d2");
+        span.setAttribute("id", "s1");
+        span.setAttribute("style", "color:blue");
+        a.appendChild(span);
+        a.setAttribute("href", "http//www.gooogle.com");
+      });
+    </script>
+  </head>
+  <body>
+    <!--<div class="d1">
+      <h1>자바스크립트로 작성하시오!</h1>
+    </div>
+    <div class="d2">
+      <span id="s1" style="color: blue">아주 감사합니다</span>
+    </div>-->
+  </body>
+</html>

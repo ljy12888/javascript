@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script></script>
+  </head>
+  <body>
+    <button onclick="h1()">h1문장생성</button>
+    <button onclick="list()">list생성</button>
+    <button onclick="list_add()">list추가</button>
+
+    <script>
+      let ol;
+      let li;
+      function h1() {
+        let input = prompt("문장을 입력하세요.");
+        const h1 = document.createElement("h1");
+        document.body.appendChild(h1);
+        h1.textContent = `${input}`;
+      }
+
+      function list() {
+        let input = prompt("문장을 입력하세요.");
+        ol = document.createElement("ol");
+        li = document.createElement("li");
+        document.body.appendChild(ol);
+        ol.appendChild(li);
+        li.textContent = `${input}`;
+      }
+      function list_add() {
+        let input = prompt("문장을 입력하세요.");
+        const li_add = document.createElement("li");
+
+        ol.appendChild(li_add);
+        li_add.textContent = `${input}`;
+      }
+    </script>
+  </body>
+</html>

@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script>
+      document.addEventListener("DOMContentLoaded", () => {
+        const div1 = document.createElement("div");
+        const div2 = document.createElement("div");
+        const ol = document.createElement("ol");
+        const li1 = document.createElement("li");
+        const li2 = document.createElement("li");
+        const li3 = document.createElement("li");
+        const span1 = document.createElement("span");
+        const span2 = document.createElement("span");
+        const span3 = document.createElement("span");
+        const span4 = document.createElement("span");
+        const a1 = document.createElement("a");
+        const a2 = document.createElement("a");
+        const br = document.createElement("br");
+
+        document.body.appendChild(div1);
+        div1.appendChild(span1);
+        div1.appendChild(span2);
+        document.body.appendChild(div2);
+        div2.appendChild(ol);
+        ol.appendChild(li1);
+        ol.appendChild(li2);
+        ol.appendChild(li3);
+        document.body.appendChild(span3);
+        span3.appendChild(a1);
+        document.body.appendChild(span4);
+        span4.appendChild(a2);
+        span3.appendChild(br);
+
+        span1.textContent = "1.문서객체 생성하기";
+        span2.textContent = "그리고 추가하기";
+        li1.textContent = "생성하고(장전)";
+        li2.textContent = "추가하고(겨냥)";
+        li3.textContent = "문서읽고(격발)";
+        a1.textContent = "네이버";
+        a2.textContent = "다음";
+
+        div1.setAttribute("class", "c1");
+        div2.setAttribute("class", "c2");
+        a1.setAttribute("href", "https://www.naver.com");
+        a2.setAttribute("href", "https://www.daum.net");
+      });
+    </script>
+  </head>
+  <body>
+    <h1>다음 html형식을 js로 작성하시오</h1>
+    <!--<div class="c1">
+      <span>1.문서객체 생성하기</span>
+      <span>그리고 추가하기</span>
+    </div>
+    <div class="c2">
+      <ol>
+        <li>1</li>
+        <li>2</li>
+        <li>3</li>
+      </ol>
+    </div>
+    <span><a href=""></a></span><br />
+    <span><a href=""></a></span>-->
+  </body>
+</html>

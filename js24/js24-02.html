@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>문서 객체 이동하기(body생략)</title>
+    <script>
+      document.addEventListener("DOMContentLoaded", () => {
+        const div1 = document.createElement("div");
+        const div2 = document.createElement("div");
+        const h1 = document.createElement("h1");
+        div1.innerHTML = "<h1>첫번째 div 태그</h1>";
+        div2.innerHTML = "<hr><h1>두번째 div태그</h1>";
+        h1.innerHTML = "내부의 h1";
+
+        document.body.append(div1, div2);
+        //document.body.appendChild(h1_2);
+
+        const div1_on = (_) => {
+          div1.appendChild(h1);
+          setTimeout(div2_on, 2000);
+        };
+        const div2_on = (_) => {
+          div2.appendChild(h1);
+          setTimeout(div1_on, 1000);
+        };
+        div1_on();
+      });
+    </script>
+  </head>
+  <body></body>
+</html>

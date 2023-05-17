@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        let arr=['밥먹자','뛰놀자','공부하자','잠자자','춤추자','게임하자','사귀자']
+        let key=['식사','플레이','스터디','수면','춤','오락','연인']
+        let obj={}
+        let temp
+        //obj.key[0]=arr[0]
+        //console.log(key[1].length)
+        /*for(let i=0;i<key.length;i++){
+            obj.[key[i]]=arr[i]
+        }*/
+
+        //obj.t=arr[0]
+        /*let temp=0
+        for(let i=0;i<key.length;i++){
+            for(let j=0;j<key[i].length;j++){
+                temp+=key[i][j]
+                //obj.temp=arr[i]
+            }
+            temp+=','
+        }*/
+        
+        /*for(let i=0;i<key.length;i++){
+            for(let j=0;j<key[i].length;j++){
+                temp+=key[i][j]
+                obj[temp]=arr[i]
+            }
+            //obj[temp]=arr[i]
+        }*/
+
+        for(let i=0;i<key.length;i++){
+            obj[key[i]]=arr[i]
+        }
+
+        //console.log(temp)
+        console.log(obj)
+        //console.log(obj)
+    </script>
+</body>
+</html>

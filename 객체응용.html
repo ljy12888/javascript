@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <div>
+      <ul>
+        <li>원본 key</li>
+        <li id="key"></li>
+        <li>원본 값</li>
+        <li id="val"></li>
+      </ul>
+    </div>
+
+    <div>
+      <table>
+        <tr>
+          <td>NO</td>
+          <td>key</td>
+          <td>values</td>
+        </tr>
+        <tr>
+          <td>1</td>
+          <td id="key1"></td>
+          <td id="val1"></td>
+        </tr>
+        <tr>
+          <td>2</td>
+          <td id="key2"></td>
+          <td id="val2"></td>
+        </tr>
+        <tr>
+          <td>3</td>
+          <td id="key3"></td>
+          <td id="val3"></td>
+        </tr>
+        <tr>
+          <td>4</td>
+          <td id="key4"></td>
+          <td id="val4"></td>
+        </tr>
+        <tr>
+          <td>5</td>
+          <td id="key5"></td>
+          <td id="val5"></td>
+        </tr>
+        <tr>
+          <td>6</td>
+          <td id="key6"></td>
+          <td id="val6"></td>
+        </tr>
+        <tr>
+          <td>7</td>
+          <td id="key7"></td>
+          <td id="val7"></td>
+        </tr>
+        <tr>
+          <td>8</td>
+          <td id="key8"></td>
+          <td id="val8"></td>
+        </tr>
+        <tr>
+          <td>9</td>
+          <td id="key9"></td>
+          <td id="val9"></td>
+        </tr>
+      </table>
+    </div>
+
+    <div id="btn">
+      <button onclick="key_sort1()">key 오름차순</button>
+      <button onclick="key_sort2()">key 내림차순</button>
+      <button onclick="key_sort3()">값 오름차순</button>
+      <button onclick="key_sort4()">값 내림차순</button>
+    </div>
+    <div>
+      <input id="add_key" placeholder="key입력" required />
+      <input id="add_val" placeholder="값 입력" />
+      <button id="add_btn" onclick="add()">추가</button><br />
+      <input id="del_key" placeholder="key입력" required />
+      <input id="del_val" placeholder="값 입력" />
+      <button id="del_btn" onclick="del()">제거</button><br />
+      <input id="mod_key" placeholder="key입력" required />
+      <input id="mod_val" placeholder="값 입력" />
+      <button id="mod_btn" onclick="mod()">수정</button>
+    </div>
+
+    <script>
+      let arr = [
+        "밥먹자",
+        "뛰놀자",
+        "공부하자",
+        "잠자자",
+        "춤추자",
+        "게임하자",
+        "사귀자",
+      ];
+      let key = ["식사", "플레이", "스터디", "수면", "춤", "오락", "연인"];
+      let obj = {}; //원본객체
+      let obj1 = {}; //key오름차순객체
+      let obj2 = {}; //key내림차순객체
+      let obj3 = {}; //값오름차순객체
+      let obj4 = {}; //값내림차순객체
+
+      //원본 key,원본 값
+      document.querySelector("#key").innerHTML = key;
+      document.querySelector("#val").innerHTML = arr;
+
+      //원본array의 키와값을 obj객체에 담음
+      for (let i = 0; i < key.length; i++) {
+        obj[key[i]] = arr[i];
+      }
+
+      //obj객체에서 키와값을 각각 배열로 담음
+      let key_arr = Object.keys(obj);
+      //=>(7) ['식사', '플레이', '스터디', '수면', '춤', '오락', '연인']
+      let arr_arr = Object.values(obj);
+      //=>(7) ['밥먹자', '뛰놀자', '공부하자', '잠자자', '춤추자', '게임하자', '사귀자']
+      let key_arr0 = [];
+
+      //테이블에 배치
+      for (let i = 0; i < key_arr.length; i++) {
+        document.querySelector(`#key${i + 1}`).innerHTML = key_arr[i];
+        document.querySelector(`#val${i + 1}`).innerHTML = arr_arr[i];
+      }
+
+      //key오름차순 함수
+      function key_sort1() {
+        obj1 = Object.fromEntries(
+          Object.entries(obj).sort(([a], [b]) => (a < b ? -1 : 1))
+        );
+        key_arr = Object.keys(obj1);
+        for (let i = 0; i < key_arr.length; i++) {
+          document.querySelector(`#key${i + 1}`).innerHTML = key_arr[i];
+          document.querySelector(`#val${i + 1}`).innerHTML = arr_arr[i];
+        }
+      }
+
+      //key내림차순 함수
+      function key_sort2() {
+        obj2 = Object.fromEntries(
+          Object.entries(obj).sort(([a], [b]) => (a > b ? -1 : 1))
+        );
+        key_arr = Object.keys(obj2);
+        for (let i = 0; i < key_arr.length; i++) {
+          document.querySelector(`#key${i + 1}`).innerHTML = key_arr[i];
+          document.querySelector(`#val${i + 1}`).innerHTML = arr_arr[i];
+        }
+      }
+
+      //값 오름차순 함수
+      function key_sort3() {
+        obj3 = Object.fromEntries(
+          Object.entries(obj).sort(([, a], [, b]) => (a < b ? -1 : 1))
+        );
+        arr_arr = Object.values(obj3);
+        for (let i = 0; i < key_arr.length; i++) {
+          document.querySelector(`#key${i + 1}`).innerHTML = key_arr[i];
+          document.querySelector(`#val${i + 1}`).innerHTML = arr_arr[i];
+        }
+      }
+
+      //값 내림차순 함수
+      function key_sort4() {
+        obj4 = Object.fromEntries(
+          Object.entries(obj).sort(([, a], [, b]) => (a > b ? -1 : 1))
+        );
+        arr_arr = Object.values(obj4);
+        for (let i = 0; i < key_arr.length; i++) {
+          document.querySelector(`#key${i + 1}`).innerHTML = key_arr[i];
+          document.querySelector(`#val${i + 1}`).innerHTML = arr_arr[i];
+        }
+      }
+
+      //추가
+      let addKey = document.querySelector("#add_key").values;
+      let addVal = document.querySelector("#add_val").values;
+
+      function add() {
+        key.push(addKey);
+        arr.push(addVal);
+        console.log(key);
+        console.log(arr);
+      }
+
+      //add();
+      console.log(key);
+      console.log(arr);
+      /*let obj1;
+      function key_sort0() {
+        obj1 = Object.fromEntries(
+          Object.entries(obj).sort(([a], [b]) => (a < b ? -1 : 1))
+        );
+      }
+
+      //console.log(key_sort0());
+      key_sort0();
+      console.log(obj1);
+      let key_arr2 = Object.keys(obj1);
+      console.log(key_arr2);*/
+      /*
+      //key로 오름차순정렬
+      const key0 = Object.fromEntries(
+        Object.entries(obj).sort(([a], [b]) => (a < b ? -1 : 1))
+      );
+      let json0 = JSON.stringify(key0, null, 2);
+
+      
+      
+      //key로 내림차순정렬
+      const key1 = Object.fromEntries(
+        Object.entries(obj).sort(([a], [b]) => (a > b ? -1 : 1))
+      );
+      let json2 = JSON.stringify(key1, null, 2);
+
+      //값으로 오름차순
+      const val0 = Object.fromEntries(
+        Object.entries(obj).sort(([, a], [, b]) => (a < b ? -1 : 1))
+      );
+      let json3 = JSON.stringify(val0, null, 2);
+
+      //값으로 내림차순
+      const val1 = Object.fromEntries(
+        Object.entries(obj).sort(([, a], [, b]) => (a > b ? -1 : 1))
+      );
+      let json4 = JSON.stringify(val1, null, 2);
+
+      document.write(`key : ${key}<br>`);
+      document.write(`값 : ${arr}<br>`);
+      document.write(json0);
+      //document.write(json2);
+      document.write(json4);
+      //console.log(json);*/
+    </script>
+  </body>
+</html>
