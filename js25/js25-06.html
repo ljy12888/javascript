@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>환전프로그램</title>
+    <script>
+      //querySelector사용
+      /*document.addEventListener("DOMContentLoaded", () => {
+        const button = document.querySelector("button");
+
+        button.addEventListener("click", () => {
+          const input = document.querySelector("input").value;
+          console.log(input);
+          document.querySelector("h1").innerHTML = `${input * 1300}원`;
+        });
+      });*/
+
+      //getElement사용
+      document.addEventListener("DOMContentLoaded", () => {
+        const button = document.getElementById("#btn");
+
+        button.addEventListener("click", () => {
+          const input = document.getElementById("#input").value;
+          console.log(input);
+          document.getElementById("#h1").innerHTML = `${input * 1300}원`;
+        });
+      });
+    </script>
+  </head>
+  <body>
+    <div>
+      <input id="input" placeholder="달러를 입력하세요" />
+      <hr />
+      <button id="btn">환전</button>
+      <h1 id="h1"></h1>
+    </div>
+
+    <script>
+      /*function change() {
+        const input = document.querySelector("input").value;
+        console.log(input);
+        //document.getElementById("#h1").innerHTML = `${input}*1300`;
+        document.querySelector("h1").innerHTML = `${input * 1300}`;
+      }*/
+    </script>
+  </body>
+</html>

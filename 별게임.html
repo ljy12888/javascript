@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script>
+      document.addEventListener("DOMContentLoaded", () => {
+        const h1 = document.createElement("h1");
+        document.body.appendChild(h1);
+        h1.textContent = "★";
+        const star = document.querySelector("h1");
+        star.style.position = "absolute";
+
+        const h1_1 = document.createElement("h1");
+        document.body.appendChild(h1_1);
+        h1_1.textContent = "●";
+        const circle = document.querySelector("h1_1");
+        circle.style.position = "absolute";
+        circle.style.left = `500px`;
+        circle.style.top = `500px`;
+
+        let [x, y] = [0, 0];
+        const block = 20;
+        const print = () => {
+          star.style.left = `${x * block}px`;
+          star.style.top = `${y * block}px`;
+        };
+        print();
+
+        //let [a, b] = [1, 1];
+        /*const block_1 = 1000;
+        const print_1 = () => {
+          circle.style.left = `${x + block_1}px`;
+          circle.style.top = `${y + block_1}px`;
+        };
+        print_1();*/
+
+        const [left, up, right, down] = [37, 38, 39, 40];
+        document.body.addEventListener("keydown", (event) => {
+          switch (event.keyCode) {
+            case left:
+              x -= 1;
+              break;
+            case up:
+              y -= 1;
+              break;
+            case right:
+              x += 1;
+              break;
+            case down:
+              y += 1;
+              break;
+          }
+          print();
+        });
+      });
+    </script>
+  </head>
+  <body></body>
+</html>

@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>getElementBy</title>
+    <script>
+      document.addEventListener("DOMContentLoaded", () => {
+        const all = document.querySelectorAll("div");
+        const i1 = document.querySelector("#i1");
+        const c1 = document.querySelector(".c1");
+        const tag = document.getElementsByTagName("div");
+        const name = document.getElementsByName("div");
+        const c2 = document.getElementsByClassName(".c2");
+        const i2 = document.getElementById("#i2");
+        console.log(all);
+        console.log(i1);
+        console.log(c1);
+        console.log(tag);
+        console.log(name);
+        console.log(c2);
+        console.log(i2);
+      });
+    </script>
+  </head>
+  <body>
+    <div class="c1">
+      <div id="i1"></div>
+    </div>
+    <div class="c2">
+      <div id="i2"></div>
+    </div>
+  </body>
+</html>
