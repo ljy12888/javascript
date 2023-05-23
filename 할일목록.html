@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>할 일 목록</title>
+    <style>
+      .checked-ok {
+        text-decoration: line-through;
+      }
+    </style>
+    <script>
+      document.addEventListener("DOMContentLoaded", () => {
+        const btn = document.querySelector("button");
+        const div = document.querySelector("#div");
+        const all_del_btn = document.querySelector("#all_del");
+        const sel_del_btn = document.querySelector("#sel_del");
+        let ct = 0;
+
+        //추가하기
+        btn.addEventListener("click", () => {
+          const input0 = document.querySelector("#input");
+          const input = document.querySelector("#input").value;
+          const div1 = document.createElement("div");
+          const check = document.createElement("input");
+          const span = document.createElement("span");
+          const del_btn = document.createElement("button");
+          //const ul = document.createElement("ul");
+          //const li = document.createElement("li");
+
+          check.setAttribute("type", "checkbox");
+          check.setAttribute("name", "todo");
+          div1.className = ct++; //각각 클래스 네임 생성
+
+          document.body.append(div1);
+          div1.append(check, span, del_btn);
+
+          span.innerText = input;
+          del_btn.innerText = "삭제";
+          input0.value = ""; //input공간 비우기
+
+          //삭제하기
+          del_btn.addEventListener("click", () => {
+            div1.remove();
+          });
+
+          //선택삭제하기
+          //arr = [];
+          check.addEventListener("change", () => {
+            //arr.push(div1);
+            //console.log(arr);
+            const divCn = div1.getAttribute("class");
+            const checkCn = check.setAttribute("class", divCn[0]);
+            sel_del_btn.addEventListener("click", () => {
+              div1[checkCn].remove();
+            });
+            //console.log(divCn);
+            //console.log(checkCn);
+            //console.log(div[checkCn]);
+
+            //const del_div = document.getElementsByClassName(".cn");
+            //const del_div = document.querySelcetor(".cn");
+            //console.log(cn);
+            //console.log(del_div);
+            //console.log(del_div);
+            //div1.remove();
+          });
+
+          //전체삭제하기
+          all_del_btn.addEventListener("click", () => {
+            div1.remove();
+          });
+
+          //체크박스 스타일1
+          check.addEventListener("change", (e) => {
+            if (e.currentTarget.checked) {
+              div1.style.textDecoration = "line-through";
+            } else {
+              div1.style.textDecoration = "none";
+            }
+
+            //체크박스 스타일2
+          });
+        });
+      });
+    </script>
+  </head>
+  <body>
+    <h1>할 일 목록</h1>
+    <input id="input" autofocus /><button>추가하기</button>
+    <button id="sel_del">선택삭제</button>
+    <button id="all_del">전체삭제</button>
+    <div id="div"></div>
+  </body>
+</html>

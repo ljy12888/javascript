@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      div {
+        font-size: 30px;
+      }
+      #h1 {
+        _display: none;
+        _color: blue;
+      }
+      h1 {
+        margin-left: 100px;
+      }
+
+      #field {
+        margin-top: 100px;
+      }
+      .clicked {
+        display: flex;
+      }
+    </style>
+    <script>
+      document.addEventListener("DOMContentLoaded", () => {
+        const star = document.querySelector("#h1");
+        const o = document.querySelector("#o");
+
+        let [x, y] = [0, 0];
+        let random_x = Math.floor(Math.random() * 10) * 100;
+        let random_y = Math.floor(Math.random() * 10) * 100;
+        let num = 0;
+
+        let score = document.querySelector("#score");
+        star.style.position = "absolute";
+        o.style.position = "absolute";
+
+        console.log(random_x);
+        console.log(random_y);
+
+        const block = 10;
+        const print = () => {
+          star.style.left = `${x * block}px`;
+          star.style.top = `${y * block}px`;
+          o.style.left = `${random_x}px`;
+          o.style.top = `${random_y}px`;
+        };
+        print();
+
+        document.body.addEventListener("keydown", (e) => {
+          switch (e.key) {
+            case "ArrowLeft":
+              x -= 1;
+              break;
+            case "ArrowUp":
+              y -= 1;
+              break;
+            case "ArrowRight":
+              x += 1;
+              break;
+            case "ArrowDown":
+              y += 1;
+              break;
+          }
+
+          print();
+          star.style.color = "red";
+          //o.style.display = "none";;
+          let xb = x * 10;
+          let yb = y * 10;
+
+          if (xb == random_x && yb == random_y) {
+            star.style.color = "blue";
+            o.style.display = "none";
+            score.innerText = `${(num += 1)}`;
+            random_x = Math.floor(Math.random() * 10) * 100;
+            random_y = Math.floor(Math.random() * 10) * 100;
+            o.style.position = "absolute";
+            o.style.left = `${random_x}px`;
+            o.style.top = `${random_y}px`;
+            o.style.display = "block";
+
+            console.log(`x=${random_x}`);
+            console.log(`y=${random_y}`);
+          }
+        });
+      });
+    </script>
+  </head>
+  <body>
+    <!--<button id="btn">열기/감추기</button>-->
+
+    <h1>점수 : <span id="score">0</span></h1>
+    <div id="field">
+      <div id="h1">★</div>
+      <div id="o">☆</div>
+    </div>
+  </body>
+
+  <script>
+    /*const btn = document.querySelector("#btn");
+
+    btn.addEventListener("click", () => {
+      o.classList.toggle("clicked");
+      star.style.color = "red";
+    });
+
+    star.addEventListener("keydown", () => {
+      if (dx == 0 && dy == 0) {
+        star.style.color = "blue";
+      }
+    });*/
+  </script>
+</html>

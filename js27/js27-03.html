@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>할 일 목록</title>
+    <script>
+      document.addEventListener("DOMContentLoaded", () => {
+        const btn = document.querySelector("button");
+        const div = document.querySelector("#div");
+        const all_del_btn = document.querySelector("#all_del");
+        const sel_del_btn = document.querySelector("#sel_del");
+
+        btn.addEventListener("click", () => {
+          const input = document.querySelector("#input").value;
+          const check = document.createElement("input");
+          const p = document.createElement("p");
+          const del_btn = document.createElement("button");
+          const ul = document.createElement("ul");
+          const li = document.createElement("li");
+
+          check.setAttribute("type", "checkbox");
+          check.setAttribute("name", "todo");
+          p.style.display = "inline"; //다음줄생성하기
+          ul.style.listStyleType = "none"; //블릿없애기
+
+          div.appendChild(ul);
+          ul.appendChild(li);
+          li.append(check, p, del_btn);
+          //div.append(check, p, del_btn);
+
+          p.innerText = `${input}`;
+          del_btn.innerText = "삭제";
+
+          //삭제하기
+          del_btn.addEventListener("click", () => {
+            li.remove();
+          });
+
+          //전체삭제하기
+          all_del_btn.addEventListener("click", () => {
+            ul.remove();
+          });
+
+          sel_del_btn.addEventListener("click", () => {
+            const checked = document.querySelectAll(
+              "input[name='todo']:checked"
+            );
+            console.log(checked);
+            checked.remove();
+          });
+        });
+      });
+    </script>
+  </head>
+  <body>
+    <h1>할 일 목록</h1>
+    <input id="input" /><button>추가하기</button>
+    <button id="sel_del">선택삭제</button>
+    <button id="all_del">전체삭제</button>
+    <div id="div"></div>
+  </body>
+</html>
