@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>유사배열을 배열로</title>
+    <script>
+      document.addEventListener("DOMContentLoaded", () => {
+        const queryAll = document.querySelectorAll("div"); //NodeList(5)
+        const getBy = document.getElementsByClassName("c1"); //HTMLCollection(5)
+        console.log(queryAll);
+        console.log(getBy);
+        const arr1 = Array.from(queryAll); //array로 변환
+        const arr2 = Array.from(getBy); //array로 변환
+
+        arr1.push("push로추가함");
+        arr2.push("push로추가함");
+        console.log("nodeList:", arr1, typeof arr1);
+        console.log("HTMLcollection:", arr2, Array.isArray(arr2));
+      });
+    </script>
+  </head>
+  <body>
+    <div class="c1"></div>
+    <div class="c1"></div>
+    <div class="c1"></div>
+    <div class="c1"></div>
+    <div class="c1"></div>
+  </body>
+</html>

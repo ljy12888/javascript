@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>할 일 목록2</title>
+    <script>
+      document.addEventListener("DOMContentLoaded", () => {
+        //폼 구성
+        const h1 = document.createElement("h1");
+        const input = document.createElement("input");
+        const add_btn = document.createElement("button");
+        const sel_btn = document.createElement("button");
+        const all_btn = document.createElement("button");
+        let ct = 0;
+        let ct2 = 0;
+
+        document.body.append(h1, input, add_btn, sel_btn, all_btn);
+
+        h1.innerHTML = "할 일 목록2";
+        add_btn.innerHTML = "추가하기";
+        sel_btn.innerHTML = "선택삭제";
+        all_btn.innerHTML = "전체삭제";
+
+        //추가하기
+        add_btn.addEventListener("click", () => {
+          const val = document.querySelector("input").value;
+          const div = document.createElement("div");
+          const check = document.createElement("input");
+          const span = document.createElement("span");
+          const del_btn = document.createElement("button");
+
+          check.setAttribute("type", "checkbox");
+
+          document.body.appendChild(div);
+          div.append(check, span, del_btn);
+
+          span.innerHTML = val;
+          del_btn.innerHTML = "삭제";
+          input.value = "";
+          //input.innerHTML = "";
+
+          //체크박스 스타일
+          check.addEventListener("change", (e) => {
+            if (e.currentTarget.checked) {
+              span.style.textDecoration = "line-through";
+            } else {
+              span.style.textDecoration = "none";
+            }
+          });
+
+          //input에 클래스 네이밍하기
+
+          check.className = ct++;
+          //div.className = ct2++;
+          check.addEventListener("change", (e) => {
+            let check_class = check.getAttribute("class");
+            if (e.currentTarget.checked) {
+              span.style.backgroundColor = "yellow";
+              div.className = check.className;
+              //console.log(check_class);
+              sel_btn.addEventListener("click", (e) => {
+                div.remove();
+              });
+            } else {
+              span.style.backgroundColor = "";
+              div.className = "";
+            }
+
+            //let div_class = div.setAtrribute("class", "check_class");
+
+            //sel_btn.addEventListener("click", () => {});
+            //let e = document.getElementsByClassName(`.${div_class}`);
+            //document.body.removeChild(div);
+            //console.log(check_class);
+            //console.log(div_class);
+          });
+        });
+      });
+    </script>
+  </head>
+  <body></body>
+</html>

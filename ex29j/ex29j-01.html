@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>set 중복제거</title>
+    <script>
+      const s1 = new Set();
+      /*s1.add(11);
+      s1.add(22);
+      s1.add(11);
+      console.log(s1);
+      console.log("size:", s1.size);
+      const arr = ["안", "녕", "하", "세", "요", "안", "녕", "히"];
+      const s2 = new Set(arr);
+      console.log("arr:", arr);
+      console.log("s2 size:", s2.size);
+      console.log("s2 value:", s2, typeof s2);
+      const result = s2.has("소");
+      console.log(result);
+      const array = new Array(s2);
+      console.log(array);
+      console.log(Array.isArray(array));*/
+
+      const set = new Set();
+      set.add(1);
+      set.add(3);
+      set.add(2);
+      console.log(set);
+
+      const arr = Array.from(set);
+      //const arr2 = Array.from(s2);
+      console.log(arr);
+
+      //clear//모두 삭제
+      //delete//해당 값 삭제
+    </script>
+  </head>
+  <body></body>
+</html>
