@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>배열 CRUD</title>
+    <script>
+      document.addEventListener("DOMContentLoaded", () => {
+        const p1 = document.createElement("P");
+        const p2 = document.createElement("p");
+        const input = document.createElement("input");
+        const add = document.createElement("button");
+        const pop = document.createElement("button");
+        const del = document.createElement("button");
+        const fix = document.createElement("button");
+        const sort = document.createElement("button");
+
+        document.body.append(input, add, pop, fix, sort, del, p1, p2);
+
+        add.innerHTML = "추가";
+        pop.innerHTML = "제거";
+        fix.innerHTML = "중복제거";
+        sort.innerHTML = "정렬";
+        del.innerHTML = "요소모두삭제";
+
+        const arr = [];
+        let vin = "";
+        //추가
+        input.addEventListener("keyup", (e) => {
+          vin = e.currentTarget.value;
+        });
+        add.addEventListener("click", (e) => {
+          if (vin) {
+            arr.push(vin);
+            p1.innerHTML = vin + "<em><strong>의 값을 추가 하였습니다.<em>";
+            p2.innerHTML = arr;
+            vin = "";
+            input.value = "";
+          } else {
+            p1.innerHTML = "값을 넣으세요!";
+          }
+        });
+        //제거
+        pop.addEventListener("click", (e) => {
+          const pp = arr.pop(vin);
+          p1.innerHTML = pp
+            ? `${pp}값을 제거 하였습니다.`
+            : "제거할 값이 엄서요~T.T.!";
+          p2.innerHTML = arr;
+          vin = "";
+          input.value = "";
+        });
+        //정렬
+        sort.addEventListener("click", (e) => {
+          arr.sort((a, b) => a - b);
+          p2.innerHTML = arr;
+          p1.innerHTML = "오름차순 정렬됩니다.";
+        });
+        //요소모두삭제
+        del.addEventListener("click", (e) => {
+          arr.splice(0, arr.length);
+          p2.innerHTML = arr;
+          p1.innerHTML = "값을 모두 삭제합니다.";
+          //arr.length=0 //두번째 방법
+        });
+        //중복제거
+        fix.addEventListener("click", (e) => {
+          const set = new Set();
+          for (let i = 0; i < arr.length; i++) {
+            set.add(arr[i]);
+          }
+          const arr1 = Array.from(set);
+          p2.innerHTML = arr1;
+        });
+        /*const arrs=new Set(arr)
+        arr=[...arrs]
+        p2.innerHTML=arr
+        p1.innerHTML='중복제거완료'
+        vin=''
+        input.value=''*/
+      });
+    </script>
+  </head>
+  <body></body>
+</html>
