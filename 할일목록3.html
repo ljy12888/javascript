@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>할일목록3(체크박스+로컬스토리지)</title>
+    <script>
+      document.addEventListener("DOMContentLoaded", () => {
+        const h1 = document.createElement("h1");
+        const p1 = document.createElement("p"); //알림창
+        const p2 = document.createElement("p"); //리스트창
+        const input = document.createElement("input");
+        const add = document.createElement("button");
+        const sel_btn = document.createElement("button");
+        const all_btn = document.createElement("button");
+        const set_btn = document.createElement("button");
+
+        const sort = document.createElement("button");
+
+        document.body.append(
+          h1,
+          input,
+          add,
+          sel_btn,
+          all_btn,
+          set_btn,
+          sort,
+          p1,
+          p2
+        );
+
+        h1.innerHTML = "나의 할 일 목록3";
+        add.innerHTML = "추가";
+        sel_btn.innerHTML = "선택삭제";
+        all_btn.innerHTML = "전체삭제";
+        set_btn.innerHTML = "중복제거";
+        sort.innerHTML = "정렬";
+
+        //추가
+        let arr = [];
+        let vin = ""; //input값 저장변수
+        input.addEventListener("keyup", (e) => {
+          vin = e.currentTarget.value;
+        });
+        add.addEventListener("click", (e) => {
+          const div = document.createElement("div");
+          const check = document.createElement("input");
+          const list = document.createElement("span");
+          const pop = document.createElement("button");
+
+          div.append(check, span, pop);
+          document.body.appendchild(div);
+
+          check.setAttribute("type", "checkbox");
+          pop.innerHTML = "삭제";
+
+          if (vin) {
+            arr.push(div);
+            p1.innerHTML = vin + "의 값을 추가 하였습니다.";
+            //span.innerHTML=vin
+            p2.innerHTML = arr;
+            vin = "";
+            input.value = "";
+          } else {
+            p1.innerHTML = "값을 넣으세요!";
+          }
+        });
+
+        //제거
+        pop;
+      });
+    </script>
+  </head>
+  <body></body>
+</html>
