@@ -119,17 +119,13 @@
 
           //삭제버튼-2
           del_btn.addEventListener("click", (e) => {
-            //arr = JSON.parse(localSorage.getItem("arr"));
-            let value = Object.values(arr);
-            /*const i = arr.indexOf(obj.id);
-            const id = obj.id;
+            const del = e.target.parentElement;
+            const index = arr.indexOf(e.target);
 
-            arr.splice(i, 1);*/
             div.remove();
 
-            console.log(value);
-            //console.log(obj.id);
-            //console.log(arr);
+            console.log(del);
+            console.log(index);
 
             localStorage.setItem("arr", JSON.stringify(arr));
           });
