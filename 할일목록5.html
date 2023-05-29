@@ -4,7 +4,7 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>할 일 목록4</title>
+    <title>할 일 목록5</title>
     <script>
       document.addEventListener("DOMContentLoaded", () => {
         //폼 구성
@@ -13,27 +13,28 @@
         const add_btn = document.createElement("button");
         const sel_btn = document.createElement("button");
         const all_btn = document.createElement("button");
+
         let ct = 0;
         let ct2 = 0;
 
         document.body.append(h1, input, add_btn, sel_btn, all_btn);
 
-        h1.innerHTML = "할 일 목록4-객체가 문제다!";
+        h1.innerHTML = "할 일 목록5-삭제가 문제다!";
         add_btn.innerHTML = "추가하기";
         sel_btn.innerHTML = "선택삭제";
         all_btn.innerHTML = "전체삭제";
 
         // 추가하기
         let arr = [];
-        //let obj = {};
+        //const del_btn;
 
         add_btn.addEventListener("click", () => {
           let obj = {};
-          const val = document.querySelector("input").value;
-          const div = document.createElement("div");
-          const check = document.createElement("input");
-          const span = document.createElement("span");
-          const del_btn = document.createElement("button");
+          let val = document.querySelector("input").value;
+          let div = document.createElement("div");
+          let check = document.createElement("input");
+          let span = document.createElement("span");
+          let del_btn = document.createElement("button");
 
           check.setAttribute("type", "checkbox");
 
@@ -64,32 +65,33 @@
           //input에 클래스 네이밍하기
           //선택삭제
           /*check.className = ct++;
-          check.addEventListener("change", (e) => {
-            let check_class = check.getAttribute("class");
-            if (e.currentTarget.checked) {
-              span.style.backgroundColor = "yellow";
-              div.className = check.className;
-              //console.log(check_class);
-              sel_btn.addEventListener("click", (e) => {
-                div.remove();
-              });
-            } else {
-              span.style.backgroundColor = "";
-              div.className = "";
-            }
-          });*/
+            check.addEventListener("change", (e) => {
+              let check_class = check.getAttribute("class");
+              if (e.currentTarget.checked) {
+                span.style.backgroundColor = "yellow";
+                div.className = check.className;
+                //console.log(check_class);
+                sel_btn.addEventListener("click", (e) => {
+                  div.remove();
+                });
+              } else {
+                span.style.backgroundColor = "";
+                div.className = "";
+              }
+            });*/
 
           //삭제버튼
-          del_btn.addEventListener("click", (e) => {
+          /*del_btn.addEventListener("click", (e) => {
             div.remove();
-            arr.pop(e);
+            arr.splice(class_num, 1);
             console.log(arr);
-            localStorage.removeItem("arr", JSON.stringify(arr));
-          });
+            localStorage.setItem("arr", JSON.stringify(arr));
+          });*/
 
           //객체 프로퍼티 생성
 
           obj.id = class_num;
+          //obj.id = arr[]
           obj.data = val;
           obj.check = false;
           arr.push(obj);
@@ -97,9 +99,41 @@
 
           console.log(obj);
           console.log(arr);
+
+          //삭제버튼-1
+          /*del_btn.addEventListener("click", (e) => {
+            console.log(obj.id);
+            const id = obj.id;
+
+            const a = arr.indexOf((obj.id = div.className));
+
+            console.log(a);
+            //const obj_id=div.className
+            //const id = indexOf(e.class_num);
+            div.remove();
+            arr.splice(a, 1);
+
+            console.log(arr);
+            localStorage.setItem("arr", JSON.stringify(arr));
+          });*/
+
+          //삭제버튼-2
+          del_btn.addEventListener("click", (e) => {
+            //arr = JSON.parse(localSorage.getItem("arr"));
+            let value = Object.values(arr);
+            /*const i = arr.indexOf(obj.id);
+            const id = obj.id;
+
+            arr.splice(i, 1);*/
+            div.remove();
+
+            console.log(value);
+            //console.log(obj.id);
+            //console.log(arr);
+
+            localStorage.setItem("arr", JSON.stringify(arr));
+          });
         }); //add이벤트 끝
-        //console.log(arr);
-        //localStorage.setItem("arr", JSON.stringify(obj));
       });
     </script>
   </head>
