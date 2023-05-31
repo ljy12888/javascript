@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script>
+      function localSave(edata) {
+        memory = JSON.stringify(edata);
+        localStorage.setItem("arr", memory);
+      }
+
+      function getData(edata) {
+        const getInput = document.querySelector("input");
+        edata.forEach((v) => {
+          list(v, v.id);
+        });
+        getInput.value = null;
+        inputData = null;
+      }
+      function list(v, id) {
+        const ediv = document.createElement("div");
+        const einput = document.createElement("input");
+        const espan = document.createElement("span");
+        const ebutton = document.createElement("button");
+        /* 방법1 */
+        // einput.setAttribute("type", "checkbox");
+        // einput.setAttribute("id", `i${id}`);
+        /* 방법2 */
+        Object.assign(einput, {
+          type: "checkbox",
+          id: `i${id}`,
+        });
+
+        earr = localStorage.getItem("arr");
+        edata = JSON.parse(earr) ?? []; //null , undefined
+
+        ediv.setAttribute("id", `div${id}`);
+        einput.addEventListener("click", (e) => {
+          //   console.log(e.currentTarget.checked);
+          ediv.style.textDecoration = e.currentTarget.checked
+            ? "line-through"
+            : "none";
+          //   console.log(e.currentTarget.id);
+          //   console.log(e.currentTarget.id.slice(0, 1));
+          //   console.log(e.currentTarget.id.slice(1));
+          const fck = edata.findIndex((v) => {
+            return v.id === +e.currentTarget.id.slice(1);
+          });
+          edata[fck].check = e.currentTarget.checked;
+          localSave(edata);
+        });
+
+        ebutton.addEventListener("click", (e) => {
+          if (e.currentTarget) ediv.remove();
+          const fid = edata.findIndex((v) => {
+            return v.id === id; // 매개변수로 입력받은 것과 같은 id값을 찾음
+          });
+          console.log(fid); // 인덱스 번호 확인
+          edata.splice(fid, 1); // 배열속에 찾은 인덱스 번호 삭제
+          localSave(edata);
+        });
+
+        const getDiv = document.querySelector("div");
+        getDiv.appendChild(ediv).append(einput, espan, ebutton);
+        espan.innerHTML = v.data;
+        ebutton.textContent = "제거하기";
+      }
+      document.addEventListener("DOMContentLoaded", () => {
+        const h1 = document.createElement("h1");
+        const input = document.createElement("input");
+        const button = document.createElement("button");
+        const clear = document.createElement("button");
+        const div = document.createElement("div");
+        document.body.append(h1, input, button, clear, div);
+        h1.innerHTML = "할 일 목록";
+        button.innerHTML = "추가하기";
+        clear.innerHTML = "삭제하기";
+        let inputData = "";
+        let ck = false;
+        input.addEventListener("keyup", (e) => {
+          inputData = e.currentTarget.value;
+          if (e.key === "Enter") todo();
+        });
+
+        let earr = localStorage.getItem("arr");
+        let edata = JSON.parse(earr) ?? []; //null , undefined
+        if (edata) getData(edata);
+        let nid = 0;
+        button.addEventListener("click", todo);
+
+        function todo() {
+          if (inputData) {
+            nid++;
+            edata.push({ id: nid, data: inputData, check: ck });
+            localSave(edata);
+            if (edata) {
+              list(edata[edata.length - 1], nid);
+              //   console.log(edata[edata.length-1], nid);
+            }
+            input.value = "";
+            inputData = "";
+          } else {
+            alert("값을 넣어주세요!!");
+          }
+        }
+      });
+    </script>
+  </head>
+  <body></body>
+</html>

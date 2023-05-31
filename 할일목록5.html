@@ -100,8 +100,8 @@
           console.log(obj);
           console.log(arr);
 
-          //삭제버튼-1
-          /*del_btn.addEventListener("click", (e) => {
+          //삭제버튼 - 1;
+          del_btn.addEventListener("click", (e) => {
             console.log(obj.id);
             const id = obj.id;
 
@@ -115,16 +115,22 @@
 
             console.log(arr);
             localStorage.setItem("arr", JSON.stringify(arr));
-          });*/
+          });
 
-          //삭제버튼-2
+          //엔터버튼
+          input.addEventListener("keyup", (e) => {
+            input = e.currentTarget.value;
+            if (e.key === "Enter")
+          });
+
+          /*//삭제버튼-2
           del_btn.addEventListener("click", (e) => {
             //const id = document.querySelector(`[obj.id=${e}]`);
             //const index = arr.indexOf(e.target);
             //const e = arr[];
             //const item = document.querySelector(`[class="${obj.id}"]`);
             //const divClass = document.querySelector(`[class="${obj.id}"]`);
-            const arrIndex = arr.indexOf({id:})
+            const arrIndex = arr.indexOf({ id });
 
             div.remove();
             //arr.splice(obj.id, 1);
@@ -134,7 +140,7 @@
             //console.log(arr);
 
             localStorage.setItem("arr", JSON.stringify(arr));
-          });
+          });*/
         }); //add이벤트 끝
       });
     </script>
