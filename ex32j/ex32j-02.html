@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script>
+      function fn2() {
+        console.log("fn2의 시작");
+        throw "고의적 에러";
+        console.log("fn2의 끝");
+      }
+      function fn1() {
+        console.log("fn1()의 시작");
+        try {
+          fn2(); //사이에 기능
+        } catch (e) {
+          console.log(e);
+        }
+        console.log("fn1()의 끝");
+      }
+      console.log("=====프로그램의 시작=====");
+      fn1(); //사이에 기능
+      console.log("=====프로그램의 끝=====");
+    </script>
+  </head>
+  <body></body>
+</html>

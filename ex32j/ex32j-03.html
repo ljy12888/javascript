@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script>
+      const num = +prompt("양의 정수를 입력해 주세요.", 35);
+      let diff, result;
+      function fib() {
+        if (n < 0 || Math.trunc(n) != n) {
+          //trunc=정수만 반환하는 메소드
+          throw new Error("음수나 정수가 아닌 값은 처리할 수 없습니다.");
+        }
+        //return n<=1?n:fib(n-1)+fib(n-2);
+        return n;
+      }
+      let start = Date.now();
+      try {
+        result = fib(num);
+      } catch (e) {
+        result = e;
+      } finally {
+        diff = Date.now() - start; //측정 끝
+      }
+
+      alert(result);
+      alert(`연산시간:${diff}ms`); //측정시간
+    </script>
+  </head>
+  <body></body>
+</html>

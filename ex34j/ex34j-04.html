@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>클래스필드2</title>
+    <script>
+      class User {
+        name = "John";
+        hi() {
+          console.log(`${this.name}은 강아지를 사랑해요.`);
+        }
+      }
+
+      class User2 {
+        name = "Wick";
+      }
+      let user2 = new User2();
+      console.log(user2.name);
+      console.log(user2.prototype.name);
+    </script>
+  </head>
+  <body></body>
+</html>
