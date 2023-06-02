@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>정적메소드3</title>
+    <script>
+      //현상
+      // class School{
+      //     constructor(){
+      //         this._name='Johndoe'
+      //     }
+      //     static get name(){
+      //         return this._name
+      //     }
+      // }
+      // console.log(School.name)
+      // const school=new School()
+      // console.log(school.name)
+
+      //분석
+      class School {
+        constructor() {
+          this._name = "Johndoe";
+        }
+        static staticThis() {
+          return this;
+        }
+        nomalThis() {
+          return this;
+        }
+      }
+
+      console.log(School.staticThis(), School.staticThis().name);
+
+      const test = new School();
+      console.log(test.nomalThis(), test.nomalThis().name);
+    </script>
+  </head>
+  <body></body>
+</html>
