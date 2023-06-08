@@ -1,0 +1,302 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>모달박스2-타이머</title>
+    <style>
+      #field {
+        width: 100%;
+        height: 300px;
+        margin: 0;
+        padding: 0;
+        background-color: white;
+      }
+      ul {
+        margin-top: -9px;
+        padding: 0;
+        border-collapse: collapse;
+      }
+      ul li {
+        list-style-type: none;
+        display: inline-block;
+        width: 18%;
+        height: 50px;
+        /* border: solid 1px #000; */
+        text-align: center;
+        padding-top: 0px;
+        padding-left: 0px;
+        margin-top: 0px;
+        margin-right: 0px;
+      }
+      #About {
+        width: 100%;
+        height: 300px;
+        text-align: center;
+        position: fixed;
+        top: 0;
+        left: 0;
+        bottom: 0;
+        right: 0;
+        background-color: red;
+        display: none;
+        /* justify-content: center; */
+        /* align-items: center; */
+      }
+      #About.active {
+        display: flex;
+      }
+      #Products {
+        width: 100%;
+        height: 300px;
+        text-align: center;
+        position: fixed;
+        top: 0;
+        left: 0;
+        bottom: 0;
+        right: 0;
+        background-color: rgb(255, 102, 0);
+        display: none;
+        /* justify-content: center; */
+        /* align-items: center; */
+      }
+      #Products.active {
+        display: flex;
+      }
+      #Technology {
+        width: 100%;
+        height: 300px;
+        text-align: center;
+        position: fixed;
+        top: 0;
+        left: 0;
+        bottom: 0;
+        right: 0;
+        background-color: rgb(243, 247, 9);
+        display: none;
+        /* justify-content: center; */
+        /* align-items: center; */
+      }
+      #Technology.active {
+        display: flex;
+      }
+      #Downloads {
+        width: 100%;
+        height: 300px;
+        text-align: center;
+        position: fixed;
+        top: 0;
+        left: 0;
+        bottom: 0;
+        right: 0;
+        background-color: rgb(0, 255, 115);
+        display: none;
+        /* justify-content: center; */
+        /* align-items: center; */
+      }
+      #Downloads.active {
+        display: flex;
+      }
+      #Etc {
+        width: 100%;
+        height: 300px;
+        text-align: center;
+        position: fixed;
+        top: 0;
+        left: 0;
+        bottom: 0;
+        right: 0;
+        background-color: rgb(98, 0, 255);
+        display: none;
+        /* justify-content: center; */
+        /* align-items: center; */
+      }
+      #Etc.active {
+        display: flex;
+      }
+
+      /* #wrap {
+        margin: 0;
+        padding: 0;
+        width: 100%;
+        height: 100px;
+        border: 1px solid #ccc;
+        position: absolute;
+      } */
+      #Ab {
+        background-color: red;
+        display: none;
+        position: relative;
+        left: -10px;
+      }
+      #Pr {
+        background-color: rgb(255, 102, 0);
+        display: none;
+        position: relative;
+        left: 150px;
+      }
+      #Te {
+        background-color: rgb(243, 247, 9);
+        display: none;
+        position: relative;
+        left: 300px;
+      }
+      #Do {
+        background-color: rgb(0, 255, 115);
+        display: none;
+        position: relative;
+        left: 450px;
+      }
+      #Et {
+        background-color: rgb(98, 0, 255);
+        display: none;
+        position: relative;
+        left: 600px;
+      }
+
+      #Ab.active {
+        display: flex;
+      }
+      #Pr.active {
+        display: flex;
+      }
+      #Te.active {
+        display: flex;
+      }
+      #Do.active {
+        display: flex;
+      }
+      #Et.active {
+        display: flex;
+      }
+      .content {
+        position: relative;
+        justify-content: center;
+        align-items: center;
+      }
+      .liText {
+        position: relative;
+        justify-content: center;
+        align-items: center;
+      }
+    </style>
+    <script>
+      document.addEventListener("DOMContentLoaded", () => {
+        const About = document.querySelector("#About");
+        const Ab = document.querySelector("#Ab");
+        const Products = document.querySelector("#Products");
+        const Pr = document.querySelector("#Pr");
+        const Technology = document.querySelector("#Technology");
+        const Te = document.querySelector("#Te");
+        const DownLoads = document.querySelector("#DownLoads");
+        const Do = document.querySelector("#Do");
+        const Etc = document.querySelector("#Etc");
+        const Et = document.querySelector("#Et");
+        const stop = document.querySelector("#stop");
+
+        for (let i = 0; i < 1000; i = i + 15) {
+          AboutTimer();
+          //About
+          function AboutTimer() {
+            setTimeout(() => {
+              About.classList.toggle("active");
+              Ab.classList.toggle("active");
+            }, i * 1000);
+            setTimeout(() => {
+              About.classList.toggle("active");
+              Ab.classList.toggle("active");
+            }, (i + 3) * 1000);
+            ProductsTimer();
+          }
+          //Products
+          function ProductsTimer() {
+            setTimeout(() => {
+              Products.classList.toggle("active");
+              Pr.classList.toggle("active");
+            }, (i + 3) * 1000);
+            setTimeout(() => {
+              Products.classList.toggle("active");
+              Pr.classList.toggle("active");
+            }, (i + 6) * 1000);
+            TechnologyTimer();
+          }
+          //Technology
+          function TechnologyTimer() {
+            setTimeout(() => {
+              Technology.classList.toggle("active");
+              Te.classList.toggle("active");
+            }, (i + 6) * 1000);
+            setTimeout(() => {
+              Technology.classList.toggle("active");
+              Te.classList.toggle("active");
+            }, (i + 9) * 1000);
+            DownloadsTimer();
+          }
+          //Downloads
+          function DownloadsTimer() {
+            setTimeout(() => {
+              Downloads.classList.toggle("active");
+              Do.classList.toggle("active");
+            }, (i + 9) * 1000);
+            setTimeout(() => {
+              Downloads.classList.toggle("active");
+              Do.classList.toggle("active");
+            }, (i + 12) * 1000);
+            EtcTimer();
+          }
+          //Etc
+          function EtcTimer() {
+            setTimeout(() => {
+              Etc.classList.toggle("active");
+              Et.classList.toggle("active");
+            }, (i + 12) * 1000);
+            setTimeout(() => {
+              Etc.classList.toggle("active");
+              Et.classList.toggle("active");
+            }, (i + 15) * 1000);
+          }
+        }
+      });
+    </script>
+  </head>
+  <body>
+    <div id="field">
+      <div id="About" class="content">
+        <h1>About</h1>
+        <p>Custom Software Development Company</p>
+      </div>
+      <div id="Products" class="content">
+        <h1>Products</h1>
+        <p>
+          Building tailored software to address critical needs of global
+          enterprises.
+        </p>
+      </div>
+
+      <div id="Technology" class="content">
+        <h1>Technology</h1>
+        <p>Machine Learning, Artificial Intelligent, Cloud Platform.</p>
+      </div>
+
+      <div id="Downloads" class="content">
+        <h1>Downloads</h1>
+        <p>You can download a free 10 days trial.</p>
+      </div>
+
+      <div id="Etc" class="content">
+        <h1>Etc</h1>
+        <p>Everything is fine.</p>
+      </div>
+    </div>
+    <div id="wrap">
+      <ul>
+        <li id="Ab" class="liText">About</li>
+        <li id="Pr" class="liText">Products</li>
+        <li id="Te" class="liText">Technology</li>
+        <li id="Do" class="liText">Downloads</li>
+        <li id="Et" class="liText">Etc</li>
+      </ul>
+    </div>
+  </body>
+</html>
