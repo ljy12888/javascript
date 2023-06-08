@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script>
+      let arr = [3, 20, 100, 4, 50, 10];
+      //let arr2 = [8, 10, 5, 1];
+
+      function sort(callback) {
+        //let arr = [3, 20, 100, 4, 50, 10];
+        let temp;
+
+        for (let i = 0; i < arr.length - 1; i++) {
+          for (let j = i + 1; j < arr.length; j++) {
+            if (arr[i] > arr[j]) {
+              temp = arr[i];
+              arr[i] = arr[j];
+              arr[j] = temp;
+            }
+          }
+        }
+        console.log(arr);
+        //return arr;
+        callback(arr);
+      }
+
+      function max(arr) {
+        document.write(`최댓값은 : ${arr[arr.length - 1]}`);
+      }
+
+      sort(max);
+    </script>
+  </head>
+  <body>
+    <!-- 콜백함수를 써서 오름차순으로 배열하고,최댓값을 구하라 -->
+  </body>
+</html>
