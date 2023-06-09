@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>토글</title>
+  </head>
+  <body>
+    <button class="toggle">토글버튼</button>
+    <div class="txt">
+      <h1>토글 실행됨</h1>
+    </div>
+    <script>
+      const txt = document.querySelector(".txt");
+      const Btn = document.querySelector(".toggle");
+      const toggle = (function () {
+        let what = false;
+
+        return function () {
+          //클로저 반환
+          txt.style.display = what ? "block" : "none";
+          what = !what; //상태뒤집기
+        };
+      })();
+      Btn.onclick = toggle; //이벤트에 클로저 할당
+    </script>
+  </body>
+</html>
