@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>게시판-list</title>
+    <style>
+      table {
+        border: 1px solid #222;
+        border-collapse: collapse;
+      }
+      th {
+        background: #eee;
+      }
+      tr {
+        border: 1px solid #b62525;
+      }
+      td {
+        border: 1px solid #ccc;
+      }
+    </style>
+    <script src="/게시판/게시판.js"></script>
+  </head>
+  <body>
+    <table>
+      <tr>
+        <th id="thNo">글번호</th>
+        <th id="thTitle">제목</th>
+        <th id="thName">작성자</th>
+        <th id="thCount">조회수</th>
+        <th id="thDate">작성일자</th>
+      </tr>
+    </table>
+    <a href="/게시판/게시판-글쓰기.html">
+      <button>글쓰기</button>
+    </a>
+  </body>
+</html>

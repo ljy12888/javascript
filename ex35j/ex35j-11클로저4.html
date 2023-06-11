@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>클로저3</title>
+  </head>
+  <body>
+    Count is <span>0/</span>
+    <script>
+      function init() {
+        let num = 0;
+        function add() {
+          num++;
+          return num;
+        }
+        function reset() {
+          num = 0;
+          return num;
+        }
+        function show() {
+          console.log(num);
+        }
+        return { add, reset, show };
+      }
+    </script>
+  </body>
+</html>

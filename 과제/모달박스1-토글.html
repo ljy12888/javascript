@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>모달박스1-토글</title>
+    <style>
+      #field {
+        width: 100%;
+        height: 300px;
+        background-color: #ccc8c8;
+      }
+      ul {
+        border-collapse: collapse;
+      }
+      ul li {
+        list-style-type: none;
+        display: inline-block;
+        width: 18%;
+        height: 50px;
+        border: solid 1px #000;
+        text-align: center;
+        padding-top: 20px;
+        margin-top: 0px;
+        margin-right: 0px;
+      }
+      #About {
+        width: 100%;
+        height: 300px;
+        text-align: center;
+        position: fixed;
+        top: 0;
+        left: 0;
+        bottom: 0;
+        right: 0;
+        background-color: red;
+        display: none;
+        /* justify-content: center; */
+        /* align-items: center; */
+      }
+      #About.active {
+        display: flex;
+      }
+      #Products {
+        width: 100%;
+        height: 300px;
+        text-align: center;
+        position: fixed;
+        top: 0;
+        left: 0;
+        bottom: 0;
+        right: 0;
+        background-color: rgb(255, 102, 0);
+        display: none;
+        /* justify-content: center; */
+        /* align-items: center; */
+      }
+      #Products.active {
+        display: flex;
+      }
+      #Technology {
+        width: 100%;
+        height: 300px;
+        text-align: center;
+        position: fixed;
+        top: 0;
+        left: 0;
+        bottom: 0;
+        right: 0;
+        background-color: rgb(243, 247, 9);
+        display: none;
+        /* justify-content: center; */
+        /* align-items: center; */
+      }
+      #Technology.active {
+        display: flex;
+      }
+      #Downloads {
+        width: 100%;
+        height: 300px;
+        text-align: center;
+        position: fixed;
+        top: 0;
+        left: 0;
+        bottom: 0;
+        right: 0;
+        background-color: rgb(0, 255, 115);
+        display: none;
+        /* justify-content: center; */
+        /* align-items: center; */
+      }
+      #Downloads.active {
+        display: flex;
+      }
+      #Etc {
+        width: 100%;
+        height: 300px;
+        text-align: center;
+        position: fixed;
+        top: 0;
+        left: 0;
+        bottom: 0;
+        right: 0;
+        background-color: rgb(98, 0, 255);
+        display: none;
+        /* justify-content: center; */
+        /* align-items: center; */
+      }
+      #Etc.active {
+        display: flex;
+      }
+      #Ab {
+        background-color: red;
+      }
+      #Pr {
+        background-color: rgb(255, 102, 0);
+      }
+      #Te {
+        background-color: rgb(243, 247, 9);
+      }
+      #Do {
+        background-color: rgb(0, 255, 115);
+      }
+      #Et {
+        background-color: rgb(98, 0, 255);
+      }
+    </style>
+    <script>
+      document.addEventListener("DOMContentLoaded", () => {
+        const About = document.querySelector("#About");
+        const Ab = document.querySelector("#Ab");
+        const Products = document.querySelector("#Products");
+        const Pr = document.querySelector("#Pr");
+        const Technology = document.querySelector("#Technology");
+        const Te = document.querySelector("#Te");
+        const DownLoads = document.querySelector("#DownLoads");
+        const Do = document.querySelector("#Do");
+        const Etc = document.querySelector("#Etc");
+        const Et = document.querySelector("#Et");
+
+        Ab.addEventListener("click", () => {
+          About.classList.toggle("active");
+          //About.style.display = flex;
+        });
+        Pr.addEventListener("click", () => {
+          Products.classList.toggle("active");
+          //About.style.display = flex;
+        });
+        Te.addEventListener("click", () => {
+          Technology.classList.toggle("active");
+          //About.style.display = flex;
+        });
+        Do.addEventListener("click", () => {
+          Downloads.classList.toggle("active");
+          //About.style.display = flex;
+        });
+        Et.addEventListener("click", () => {
+          Etc.classList.toggle("active");
+          //About.style.display = flex;
+        });
+      });
+    </script>
+  </head>
+  <body>
+    <div id="field">
+      <div id="About" class="content">
+        <h1>About</h1>
+        <p>Custom Software Development Company</p>
+      </div>
+      <div id="Products" class="content">
+        <h1>Products</h1>
+        <p>
+          Building tailored software to address critical needs of global
+          enterprises.
+        </p>
+      </div>
+
+      <div id="Technology" class="content">
+        <h1>Technology</h1>
+        <p>Machine Learning, Artificial Intelligent, Cloud Platform.</p>
+      </div>
+
+      <div id="Downloads" class="content">
+        <h1>Downloads</h1>
+        <p>You can download a free 10 days trial.</p>
+      </div>
+
+      <div id="Etc" class="content">
+        <h1>Etc</h1>
+        <p>Everything is fine.</p>
+      </div>
+    </div>
+    <ul>
+      <li id="Ab">About</li>
+      <li id="Pr">Products</li>
+      <li id="Te">Technology</li>
+      <li id="Do">Downloads</li>
+      <li id="Et">Etc</li>
+    </ul>
+  </body>
+</html>
