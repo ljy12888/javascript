@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>게시판-list</title>
+    <style>
+      table {
+        border: 1px solid #222;
+        border-collapse: collapse;
+      }
+      th {
+        background: #eee;
+      }
+      tr {
+        border: 1px solid black;
+      }
+      td {
+        border: 1px solid #ccc;
+      }
+    </style>
+    <script src="/게시판/게시판.js"></script>
+    <script>
+      document.addEventListener("DOMContentLoaded", () => {
+        const btn = document.querySelector("#btn");
+        let value;
+        let ct = 0;
+        let ct2 = 0;
+
+        //추가하기
+        btn.addEventListener("click", () => {
+          //로컬스토리지 get
+          let localarr = localStorage.getItem("arr"); //로컬데이터가져오기
+          let jsonarr = JSON.parse(localarr); //JSON변환
+
+          let eobj;
+          let value;
+
+          for (let i = 0; i < jsonarr.length; i++) {
+            const table = document.querySelector("#table");
+            const tr = document.createElement("tr");
+            const td_number = document.createElement("td");
+            const td_title = document.createElement("td");
+            const td_name = document.createElement("td");
+            const td_count = document.createElement("td");
+            const td_date = document.createElement("td");
+
+            document.body.appendChild(table);
+            table.append(tr, td_number, td_title, td_name, td_count, td_date);
+
+            eobj = jsonarr[i];
+            console.log(eobj);
+            value = Object.values(eobj); //객체의 값만 배열로 저장
+
+            //리스트 추가
+            document.body.appendChild(table);
+            table.append(tr, td_number, td_title, td_name, td_count, td_date);
+
+            td_number.innerText = value[0];
+            td_title.innerText = value[1];
+            td_name.innerText = value[2];
+            td_count.innerText = value[3];
+            td_date.innerText = value[4];
+          }
+          //let key = Object.keys(eobj);
+          //value = Object.values(eobj); //obj값을 배열로 저장
+          //let entries = Object.entries(eobj);
+          //let jsonEobj = JSON.parse(eobj);*/
+          //console.log(value);
+          //document.write();
+        });
+      });
+    </script>
+  </head>
+  <body id="body">
+    <table id="table">
+      <tr>
+        <th id="">글번호</th>
+        <th id="">제목</th>
+        <th id="">작성자</th>
+        <th id="">조회수</th>
+        <th id="">작성일자</th>
+      </tr>
+    </table>
+
+    <a href="/게시판/게시판-글쓰기.html">
+      <button>글쓰기</button>
+    </a>
+    <button id="btn">추가</button>
+  </body>
+
+  <script></script>
+</html>
